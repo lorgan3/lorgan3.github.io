@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>K8S</title>
+
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script src="http://cdn.rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script> <!--json-model-->
+    <script src="http://cdn.rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.primitives.min.js"></script> <!--a-ocean-->
+    <script src="js/components.js"></script>
+</head>
+<body>
+    <a-scene id="scene" fog="type: linear; near: 50; far: 100; color: #AAB">
+        <!-- cache -->
+        <a-assets>
+            <a-asset-item id="boat" src="models/boat.json"></a-asset-item>
+            <a-asset-item id="container" src="models/container.json"></a-asset-item>
+            <a-asset-item id="pod" src="models/pod.json"></a-asset-item>
+            <a-asset-item id="rowboat" src="models/rowboat.json"></a-asset-item>
+
+            <img id="kubernetes" src="img/kubernetes.png"></img>
+            <img id="coscale" src="img/coscale.png"></img>
+            <img id="exit" src="img/exit.png"></img>
+
+            <img id="cpu" src="img/cpu.png"></img>
+            <img id="memory" src="img/memory.png"></img>
+
+            <img id="tux" src="img/tux.png"></img>
+        </a-assets>
+
+        <!-- fancy loader -->
+        <coscale-logo class="clickable" position="0 6 -3" spin=true dismiss></coscale-logo>
+
+        <a-entity class="clickable" json-model="src: #rowboat" float position="0 -2.5 -3" click="function: handleTux">
+            <a-entity position="0 2.2 0" geometry="primitive: plane; width: 2; height: 4" material="shader: flat; transparent: true; side: double; src: #tux" billboard="lockX: true"></a-entity>
+        </a-entity>
+
+        <!-- label elements -->
+        <container-info id="container-info" position="0 0 0" visible="false"></container-info>
+        <namespace-info id="namespace-info" position="0 0 0" visible="false"></namespace-info>
+        <pod-info id="pod-info" position="0 0 0" visible="false"></pod-info>
+
+        <!-- camera container -->
+        <a-entity id="camera-holder" postion="0 0 0">
+            <a-camera userHeight=0 position="0 6 0">
+                <a-cursor raycaster="objects: .clickable;" fuse-timeout=2000>
+                    <a-animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+                    <a-animation begin="click" attribute="material.color" from="red" to="black" dur="0"></a-animation>
+                    <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="2000" fill="backwards" from="1 1 1" to="0.1 0.1 001"></a-animation>
+                    <a-animation begin="cursor-fusing" attribute="material.color" from="black" to="red" dur="2000"></a-animation>
+                </a-cursor>
+            </a-camera>
+          </a-entity>
+
+        <a-sky color="#ECECEC" radius=120></a-sky>
+        <a-light type="ambient" color="#888"></a-light>
+        <a-light type="directional" position="-5 5 -10" intensity="0.7"></a-light>
+    </a-scene>
+
+    <script src="js/general.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
