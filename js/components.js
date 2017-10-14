@@ -51,7 +51,7 @@ AFRAME.registerComponent('coscale-logo', {
         this.rightOuterMesh.position.set(0, 1.5, 0);
         this.rightOuterMesh.scale.setScalar(1.5);
 
-        let sphereGeometry = new THREE.SphereBufferGeometry(8);
+        let sphereGeometry = new THREE.SphereBufferGeometry(5);
         this.sphereMesh = new THREE.Mesh(sphereGeometry, outside);
 
         this.el.setObject3D('backMesh', this.backMesh);
