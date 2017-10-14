@@ -18,7 +18,8 @@ Circle.prototype.getPoint = function (t) {
 // The coscale logo in 3D, can be used as a loader.
 AFRAME.registerComponent('coscale-logo', {
     schema: {
-        spin: { type: 'boolean', default: false }
+        spin: { type: 'boolean', default: false },
+        closed: { type: 'boolean', default: false }
     },
     init: function () {
         this.spinState = 0;
@@ -79,8 +80,19 @@ AFRAME.registerComponent('coscale-logo', {
 
         if (this.data.spin === true) {
             this.spin();
+        } else if (this.data.closed === true) {
+            this.leftOuterMesh.scale.setScalar(1);
+            this.leftOuterMesh.rotation.z = Math.PI / 2;
+            this.rightOuterMesh.scale.setScalar(1);
+            this.rightOuterMesh.rotation.z = Math.PI / 2;
         }
-    }, remove: function () {
+    },
+    update: function (oldData) {
+        if (oldData.spin !== undefined && oldData.spin !== this.data.spin) {
+            this.data.spin === true ? this.spin() : this.stopSpin();
+        }
+    },
+    remove: function () {
         this.el.removeObject3D('backMesh');
         this.el.removeObject3D('innerMesh');
         this.el.removeObject3D('leftOuterMesh');
@@ -151,7 +163,8 @@ AFRAME.registerPrimitive('coscale-logo', {
         'coscale-logo': {}
     },
     mappings: {
-        spin: 'coscale-logo.spin'
+        spin: 'coscale-logo.spin',
+        closed: 'coscale-logo.closed'
     }
 });
 

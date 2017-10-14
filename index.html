@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>K8S</title>
+    <title>Proof of concept VR Kubernetes monitoring</title>
 
     <script src="//aframe.io/releases/0.6.0/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script> <!--json-model-->
@@ -29,7 +29,7 @@
         </a-assets>
 
         <!-- fancy loader -->
-        <coscale-logo class="clickable" position="0 6 -3" spin=true dismiss></coscale-logo>
+        <coscale-logo id="logo" closed=true position="0 6 -3" dismiss></coscale-logo>
 
         <a-entity class="clickable" json-model="src: #rowboat" float position="0 -2.5 -3" click="function: handleTux">
             <a-entity position="0 2.2 0" geometry="primitive: plane; width: 2; height: 4" material="shader: flat; transparent: true; side: double; src: #tux" billboard="lockX: true"></a-entity>
@@ -39,6 +39,9 @@
         <container-info id="container-info" position="0 0 0" visible="false"></container-info>
         <namespace-info id="namespace-info" position="0 0 0" visible="false"></namespace-info>
         <pod-info id="pod-info" position="0 0 0" visible="false"></pod-info>
+
+        <!-- ocean -->
+        <a-ocean width=240 depth=240 density=32 opacity=1 position="0 -3 0"></a-ocean>
 
         <!-- camera container -->
         <a-entity id="camera-holder" postion="0 0 0">
