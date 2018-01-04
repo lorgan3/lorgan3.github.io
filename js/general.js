@@ -154,7 +154,9 @@ class Kubernetes extends ServerGroup {
             this.namespaces_ = [];
             for (let group of this.serverGroups) {
                 if (group.type !== 'Nodes') {
-                    this.namespaces_.push(new Namespace(group));
+                    for (let subGroup of group.serverGroups) {
+                        this.namespaces_.push(new Namespace(subGroup));
+                    }
                 }
             }
         }

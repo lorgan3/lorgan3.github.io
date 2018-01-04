@@ -283,6 +283,9 @@ function handleTux(e, el) {
         return;
     }
 
+    cleanupBoat();
+    cleanupContainer();
+
     teleport(el.object3D, 3, 3);
 }
 
