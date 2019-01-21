@@ -29,31 +29,9 @@ const CONTAINER_COLORS = {
 
 // find the app to get data from.
 let url = new URL(location);
-let appId = url.searchParams.get('app');
-let cpuMetric = Number(url.searchParams.get('cpu'));
-let memoryMetric = Number(url.searchParams.get('memory'));
+let api = new MockApi(url.searchParams.get('app'), Number(url.searchParams.get('cpu')), Number(url.searchParams.get('memory')));
 
-let headers = new Headers();
-headers.append('Accept', 'application/json');
-headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8');
-
-if (appId === null) {
-    appId = '0196891a-fc0e-4849-95d3-530cb0835a45';
-    cpuMetric = 3238555; // Docker container user mode cpu usage
-    memoryMetric = 3238560; // Docker container free memory percentage
-
-    headers.append('DashboardAuthorization', '80e97d00-6e22-472b-b5a9-c9e3701bfc40');
-} else {
-    headers.append('HTTPAuthorization', prompt('HTTPAuthorization for ' + appId));
-}
-
-Promise.all([fetch('https://app.coscale.com/api/v1/app/' + appId + '/servergroups/?start=-604800&stop=0&expand=parentId&expand=serverIds', { headers: headers }).then(handleErrors).then(response => response.json()).then(json => json.map(data => new ServerGroup(data)))]
-
-// fetch('https://app.coscale.com/api/v1/app/' + appId + '/servers/?start=-604800&stop=0&expand=parentId', {headers:headers})
-//     .then(handleErrors)
-//     .then(response => response.json())
-//     .then(json => json.map((data) => new Server(data)))
-).then(result => {
+api.fetchServerGroups().then(result => {
     let root = ServerGroup.getRoot();
     if (root === undefined) {
         throw 'This is not a Kubernetes/Openshift environment.';
@@ -150,34 +128,7 @@ function populateContainer(container) {
  * @param {*} pods The pod html objects.
  */
 function fetchPodData(pods) {
-    let subjects = [];
-    for (let pod of pods) {
-        subjects.push(pod.data.short);
-    }
-
-    let now = Date.now() / 1000;
-    let data = new URLSearchParams();
-    data.append('data', JSON.stringify({
-        start: now - 604800,
-        stop: now,
-        ids: [{
-            metricId: cpuMetric,
-            dimensionsSpecs: [],
-            subjects: subjects.join(','),
-            viewtype: 'MAX'
-        }, {
-            metricId: memoryMetric,
-            dimensionsSpecs: [],
-            subjects: subjects.join(','),
-            viewtype: 'MAX'
-        }]
-    }));
-
-    fetch('https://app.coscale.com/api/v1/app/' + appId + '/data/dimension/getCalculated/calculated/?function=summary&mode=last', {
-        headers: headers,
-        method: 'POST',
-        body: data
-    }).then(handleErrors).then(response => response.json()).then(json => {
+    api.fetchPodData(pods).then(json => {
         let podMap = new Map();
         pods.map(pod => podMap.set(pod.data.id, pod));
 
@@ -187,10 +138,10 @@ function fetchPodData(pods) {
 
             if (pod !== undefined) {
                 switch (metric.m) {
-                    case memoryMetric:
+                    case api.memoryMetric:
                         pod.memory = metric.calc[0];
                         break;
-                    case cpuMetric:
+                    case api.cpuMetric:
                         pod.cpu = metric.calc[0];
                         break;
                 }
