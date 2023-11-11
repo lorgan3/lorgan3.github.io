@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .project {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .project img {
+            height: auto;
+            display: block;
+            width: 100%;
+            image-rendering: pixelated;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .project h3 {
+            margin: 0;
+            font-size: 1.2em;
+            font-weight: 700;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    <title>Lorgan3's projects</title>
+</head>
+
+<body>
+    <header>
+        <a href="https://github.com/lorgan3">
+            <h1>Lorgan3's projects</h1>
+        </a>
+    </header>
+
+    <div class="portfolio">
+        <a href="https://lorgan3.github.io/open-td/" class="project">
+            <img src="assets/Open TD.png" alt="Open Tower Defense" />
+            <span class="overlay">
+                <h3 title="Open Tower Defense">Open Tower Defense</h3>
+            </span>
+        </a>
+
+        <a href="https://lorgan3.github.io/playlist/" class="project">
+            <img src="assets/BeatSaber.png" alt="Beat Saber bookmarks to playlist converter" />
+            <span class="overlay">
+                <h3 title="Beat Saber bookmarks to playlist converter">
+                    Beat Saber bookmarks to playlist converter
+                </h3>
+            </span>
+        </a>
+    </div>
+</body>
+
+</html>
