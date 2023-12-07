@@ -199,6 +199,46 @@
         "w": 343,
         "h": 222
       }
+    },
+    "spells_range.png": {
+      "frame": {
+        "x": 2430,
+        "y": 342,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "spells_fireball_1.png": {
+      "frame": {
+        "x": 2430,
+        "y": 408,
+        "w": 12,
+        "h": 12
+      }
+    },
+    "spells_fireball_2.png": {
+      "frame": {
+        "x": 2444,
+        "y": 408,
+        "w": 12,
+        "h": 12
+      }
+    },
+    "spells_fireball_3.png": {
+      "frame": {
+        "x": 2458,
+        "y": 408,
+        "w": 12,
+        "h": 12
+      }
+    },
+    "spells_fireball_4.png": {
+      "frame": {
+        "x": 2472,
+        "y": 408,
+        "w": 12,
+        "h": 12
+      }
     }
   },
   "animations": {
@@ -240,6 +280,12 @@
       "wizard_walk_2.png",
       "wizard_walk_3.png",
       "wizard_walk_4.png"
+    ],
+    "spells_fireball": [
+      "spells_fireball_1.png",
+      "spells_fireball_2.png",
+      "spells_fireball_3.png",
+      "spells_fireball_4.png"
     ]
   },
   "meta": {
