@@ -216,10 +216,42 @@
         "h": 64
       }
     },
-    "spells_arrowDown.png": {
+    "water1.png": {
       "frame": {
         "x": 2391,
         "y": 408,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "water2.png": {
+      "frame": {
+        "x": 2391,
+        "y": 442,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "water3.png": {
+      "frame": {
+        "x": 2391,
+        "y": 476,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "water4.png": {
+      "frame": {
+        "x": 2391,
+        "y": 510,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "spells_arrowDown.png": {
+      "frame": {
+        "x": 2391,
+        "y": 544,
         "w": 20,
         "h": 20
       }
@@ -227,7 +259,7 @@
     "spells_arrowLeft.png": {
       "frame": {
         "x": 2413,
-        "y": 408,
+        "y": 544,
         "w": 20,
         "h": 20
       }
@@ -235,45 +267,51 @@
     "spells_arrowRight.png": {
       "frame": {
         "x": 2435,
-        "y": 408,
+        "y": 544,
         "w": 20,
         "h": 20
       }
     },
     "spells_fireball_1.png": {
       "frame": {
-        "x": 2391,
-        "y": 430,
+        "x": 2046,
+        "y": 566,
         "w": 12,
         "h": 12
       }
     },
     "spells_fireball_2.png": {
       "frame": {
-        "x": 2405,
-        "y": 430,
+        "x": 2060,
+        "y": 566,
         "w": 12,
         "h": 12
       }
     },
     "spells_fireball_3.png": {
       "frame": {
-        "x": 2419,
-        "y": 430,
+        "x": 2074,
+        "y": 566,
         "w": 12,
         "h": 12
       }
     },
     "spells_fireball_4.png": {
       "frame": {
-        "x": 2433,
-        "y": 430,
+        "x": 2088,
+        "y": 566,
         "w": 12,
         "h": 12
       }
     }
   },
   "animations": {
+    "wave": [
+      "water1.png",
+      "water2.png",
+      "water3.png",
+      "water4.png"
+    ],
     "wizard_attack": [
       "wizard_attack_1.png",
       "wizard_attack_2.png",
@@ -321,7 +359,7 @@
     ]
   },
   "meta": {
-    "app": "https://github.com/lorgan3/open-td",
+    "app": "https://github.com/lorgan3/sorcerers",
     "version": "1.0",
     "image": "atlas.png",
     "size": {
