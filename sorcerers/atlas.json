@@ -216,15 +216,23 @@
         "h": 64
       }
     },
-    "water1.png": {
+    "spells_arrowBody.png": {
       "frame": {
         "x": 2391,
         "y": 408,
-        "w": 64,
+        "w": 32,
         "h": 32
       }
     },
-    "water2.png": {
+    "spells_arrowTip.png": {
+      "frame": {
+        "x": 2425,
+        "y": 408,
+        "w": 32,
+        "h": 32
+      }
+    },
+    "water1.png": {
       "frame": {
         "x": 2391,
         "y": 442,
@@ -232,7 +240,7 @@
         "h": 32
       }
     },
-    "water3.png": {
+    "water2.png": {
       "frame": {
         "x": 2391,
         "y": 476,
@@ -240,12 +248,44 @@
         "h": 32
       }
     },
-    "water4.png": {
+    "water3.png": {
       "frame": {
         "x": 2391,
         "y": 510,
         "w": 64,
         "h": 32
+      }
+    },
+    "water4.png": {
+      "frame": {
+        "x": 2046,
+        "y": 566,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "spells_lock_1.png": {
+      "frame": {
+        "x": 2112,
+        "y": 566,
+        "w": 26,
+        "h": 26
+      }
+    },
+    "spells_lock_2.png": {
+      "frame": {
+        "x": 2140,
+        "y": 566,
+        "w": 26,
+        "h": 26
+      }
+    },
+    "spells_lock_3.png": {
+      "frame": {
+        "x": 2168,
+        "y": 566,
+        "w": 26,
+        "h": 26
       }
     },
     "spells_arrowDown.png": {
@@ -274,7 +314,7 @@
     },
     "spells_fireball_1.png": {
       "frame": {
-        "x": 2046,
+        "x": 2196,
         "y": 566,
         "w": 12,
         "h": 12
@@ -282,7 +322,7 @@
     },
     "spells_fireball_2.png": {
       "frame": {
-        "x": 2060,
+        "x": 2210,
         "y": 566,
         "w": 12,
         "h": 12
@@ -290,7 +330,7 @@
     },
     "spells_fireball_3.png": {
       "frame": {
-        "x": 2074,
+        "x": 2224,
         "y": 566,
         "w": 12,
         "h": 12
@@ -298,7 +338,7 @@
     },
     "spells_fireball_4.png": {
       "frame": {
-        "x": 2088,
+        "x": 2238,
         "y": 566,
         "w": 12,
         "h": 12
@@ -350,6 +390,11 @@
       "wizard_walk_2.png",
       "wizard_walk_3.png",
       "wizard_walk_4.png"
+    ],
+    "spells_lock": [
+      "spells_lock_1.png",
+      "spells_lock_2.png",
+      "spells_lock_3.png"
     ],
     "spells_fireball": [
       "spells_fireball_1.png",
