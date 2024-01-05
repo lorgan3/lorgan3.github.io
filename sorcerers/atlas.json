@@ -208,6 +208,54 @@
         "h": 222
       }
     },
+    "spells_slash_1.png": {
+      "frame": {
+        "x": 2046,
+        "y": 566,
+        "w": 126,
+        "h": 150
+      }
+    },
+    "spells_slash_2.png": {
+      "frame": {
+        "x": 2174,
+        "y": 566,
+        "w": 124,
+        "h": 150
+      }
+    },
+    "spells_slash_3.png": {
+      "frame": {
+        "x": 2300,
+        "y": 566,
+        "w": 125,
+        "h": 150
+      }
+    },
+    "spells_slash_4.png": {
+      "frame": {
+        "x": 2046,
+        "y": 718,
+        "w": 126,
+        "h": 150
+      }
+    },
+    "spells_slash_5.png": {
+      "frame": {
+        "x": 2174,
+        "y": 718,
+        "w": 124,
+        "h": 150
+      }
+    },
+    "spells_slash_6.png": {
+      "frame": {
+        "x": 2300,
+        "y": 718,
+        "w": 125,
+        "h": 150
+      }
+    },
     "spells_range.png": {
       "frame": {
         "x": 2391,
@@ -259,14 +307,14 @@
     "water4.png": {
       "frame": {
         "x": 2046,
-        "y": 566,
+        "y": 870,
         "w": 64,
         "h": 32
       }
     },
     "spells_lock_1.png": {
       "frame": {
-        "x": 2112,
+        "x": 2427,
         "y": 566,
         "w": 26,
         "h": 26
@@ -274,16 +322,16 @@
     },
     "spells_lock_2.png": {
       "frame": {
-        "x": 2140,
-        "y": 566,
+        "x": 2427,
+        "y": 594,
         "w": 26,
         "h": 26
       }
     },
     "spells_lock_3.png": {
       "frame": {
-        "x": 2168,
-        "y": 566,
+        "x": 2427,
+        "y": 622,
         "w": 26,
         "h": 26
       }
@@ -314,32 +362,32 @@
     },
     "spells_fireball_1.png": {
       "frame": {
-        "x": 2196,
-        "y": 566,
+        "x": 2427,
+        "y": 650,
         "w": 12,
         "h": 12
       }
     },
     "spells_fireball_2.png": {
       "frame": {
-        "x": 2210,
-        "y": 566,
+        "x": 2441,
+        "y": 650,
         "w": 12,
         "h": 12
       }
     },
     "spells_fireball_3.png": {
       "frame": {
-        "x": 2224,
-        "y": 566,
+        "x": 2427,
+        "y": 664,
         "w": 12,
         "h": 12
       }
     },
     "spells_fireball_4.png": {
       "frame": {
-        "x": 2238,
-        "y": 566,
+        "x": 2441,
+        "y": 664,
         "w": 12,
         "h": 12
       }
@@ -390,6 +438,14 @@
       "wizard_walk_2.png",
       "wizard_walk_3.png",
       "wizard_walk_4.png"
+    ],
+    "spells_slash": [
+      "spells_slash_1.png",
+      "spells_slash_2.png",
+      "spells_slash_3.png",
+      "spells_slash_4.png",
+      "spells_slash_5.png",
+      "spells_slash_6.png"
     ],
     "spells_lock": [
       "spells_lock_1.png",
