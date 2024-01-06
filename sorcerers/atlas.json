@@ -280,7 +280,7 @@
         "h": 32
       }
     },
-    "water1.png": {
+    "shield1.png": {
       "frame": {
         "x": 2391,
         "y": 442,
@@ -288,7 +288,7 @@
         "h": 32
       }
     },
-    "water2.png": {
+    "shield2.png": {
       "frame": {
         "x": 2391,
         "y": 476,
@@ -296,7 +296,7 @@
         "h": 32
       }
     },
-    "water3.png": {
+    "shield3.png": {
       "frame": {
         "x": 2391,
         "y": 510,
@@ -304,10 +304,74 @@
         "h": 32
       }
     },
-    "water4.png": {
+    "shield4.png": {
       "frame": {
         "x": 2046,
         "y": 870,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "shield5.png": {
+      "frame": {
+        "x": 2112,
+        "y": 870,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "shield6.png": {
+      "frame": {
+        "x": 2178,
+        "y": 870,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "shield7.png": {
+      "frame": {
+        "x": 2244,
+        "y": 870,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "shield8.png": {
+      "frame": {
+        "x": 2310,
+        "y": 870,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "water1.png": {
+      "frame": {
+        "x": 2376,
+        "y": 870,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "water2.png": {
+      "frame": {
+        "x": 2046,
+        "y": 904,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "water3.png": {
+      "frame": {
+        "x": 2112,
+        "y": 904,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "water4.png": {
+      "frame": {
+        "x": 2178,
+        "y": 904,
         "w": 64,
         "h": 32
       }
@@ -394,6 +458,16 @@
     }
   },
   "animations": {
+    "shield": [
+      "shield1.png",
+      "shield2.png",
+      "shield3.png",
+      "shield4.png",
+      "shield5.png",
+      "shield6.png",
+      "shield7.png",
+      "shield8.png"
+    ],
     "wave": [
       "water1.png",
       "water2.png",
