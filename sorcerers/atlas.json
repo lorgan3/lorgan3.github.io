@@ -1,6 +1,6 @@
 {
   "frames": {
-    "spells_sword.png": {
+    "spells_sword": {
       "frame": {
         "x": 1,
         "y": 1,
@@ -8,7 +8,7 @@
         "h": 808
       }
     },
-    "wizard_attack_3.png": {
+    "wizard_attack_3": {
       "frame": {
         "x": 182,
         "y": 1,
@@ -16,7 +16,7 @@
         "h": 418
       }
     },
-    "wizard_dead_1.png": {
+    "wizard_dead_1": {
       "frame": {
         "x": 883,
         "y": 1,
@@ -24,7 +24,7 @@
         "h": 397
       }
     },
-    "wizard_hurt_1.png": {
+    "wizard_hurt_1": {
       "frame": {
         "x": 883,
         "y": 400,
@@ -32,7 +32,7 @@
         "h": 397
       }
     },
-    "wizard_hurt_3.png": {
+    "wizard_hurt_3": {
       "frame": {
         "x": 1,
         "y": 811,
@@ -40,7 +40,7 @@
         "h": 397
       }
     },
-    "wizard_attack_2.png": {
+    "wizard_attack_2": {
       "frame": {
         "x": 420,
         "y": 811,
@@ -48,7 +48,7 @@
         "h": 391
       }
     },
-    "wizard_jump_2.png": {
+    "wizard_jump_2": {
       "frame": {
         "x": 182,
         "y": 421,
@@ -56,7 +56,7 @@
         "h": 381
       }
     },
-    "wizard_run_1.png": {
+    "wizard_run_1": {
       "frame": {
         "x": 1302,
         "y": 1,
@@ -64,7 +64,7 @@
         "h": 375
       }
     },
-    "wizard_run_2.png": {
+    "wizard_run_2": {
       "frame": {
         "x": 1302,
         "y": 378,
@@ -72,7 +72,7 @@
         "h": 375
       }
     },
-    "wizard_run_3.png": {
+    "wizard_run_3": {
       "frame": {
         "x": 1302,
         "y": 755,
@@ -80,7 +80,7 @@
         "h": 375
       }
     },
-    "wizard_run_4.png": {
+    "wizard_run_4": {
       "frame": {
         "x": 1,
         "y": 1210,
@@ -88,7 +88,7 @@
         "h": 375
       }
     },
-    "wizard_hurt_2.png": {
+    "wizard_hurt_2": {
       "frame": {
         "x": 401,
         "y": 1210,
@@ -96,7 +96,7 @@
         "h": 361
       }
     },
-    "wizard_idle_1.png": {
+    "wizard_idle_1": {
       "frame": {
         "x": 496,
         "y": 421,
@@ -104,7 +104,7 @@
         "h": 360
       }
     },
-    "wizard_walk_1.png": {
+    "wizard_walk_1": {
       "frame": {
         "x": 820,
         "y": 1210,
@@ -112,7 +112,7 @@
         "h": 360
       }
     },
-    "wizard_idle_2.png": {
+    "wizard_idle_2": {
       "frame": {
         "x": 1164,
         "y": 1210,
@@ -120,7 +120,7 @@
         "h": 354
       }
     },
-    "wizard_idle_3.png": {
+    "wizard_idle_3": {
       "frame": {
         "x": 1702,
         "y": 1,
@@ -128,7 +128,7 @@
         "h": 354
       }
     },
-    "wizard_idle_4.png": {
+    "wizard_idle_4": {
       "frame": {
         "x": 1702,
         "y": 357,
@@ -136,7 +136,7 @@
         "h": 354
       }
     },
-    "wizard_walk_2.png": {
+    "wizard_walk_2": {
       "frame": {
         "x": 1702,
         "y": 713,
@@ -144,7 +144,7 @@
         "h": 354
       }
     },
-    "wizard_walk_3.png": {
+    "wizard_walk_3": {
       "frame": {
         "x": 1702,
         "y": 1069,
@@ -152,7 +152,7 @@
         "h": 354
       }
     },
-    "wizard_walk_4.png": {
+    "wizard_walk_4": {
       "frame": {
         "x": 1,
         "y": 1587,
@@ -160,7 +160,7 @@
         "h": 354
       }
     },
-    "wizard_jump_1.png": {
+    "wizard_jump_1": {
       "frame": {
         "x": 345,
         "y": 1587,
@@ -168,7 +168,7 @@
         "h": 348
       }
     },
-    "wizard_jump_3.png": {
+    "wizard_jump_3": {
       "frame": {
         "x": 760,
         "y": 1587,
@@ -176,7 +176,7 @@
         "h": 348
       }
     },
-    "wizard_attack_1.png": {
+    "wizard_attack_1": {
       "frame": {
         "x": 1175,
         "y": 1587,
@@ -184,7 +184,7 @@
         "h": 343
       }
     },
-    "wizard_dead_2.png": {
+    "wizard_dead_2": {
       "frame": {
         "x": 1579,
         "y": 1587,
@@ -192,7 +192,7 @@
         "h": 339
       }
     },
-    "wizard_dead_3.png": {
+    "wizard_dead_3": {
       "frame": {
         "x": 2046,
         "y": 1,
@@ -200,7 +200,7 @@
         "h": 339
       }
     },
-    "wizard_dead_4.png": {
+    "wizard_dead_4": {
       "frame": {
         "x": 2046,
         "y": 342,
@@ -208,7 +208,7 @@
         "h": 222
       }
     },
-    "spells_slash_1.png": {
+    "spells_slash_1": {
       "frame": {
         "x": 2046,
         "y": 566,
@@ -216,7 +216,7 @@
         "h": 150
       }
     },
-    "spells_slash_2.png": {
+    "spells_slash_2": {
       "frame": {
         "x": 2174,
         "y": 566,
@@ -224,7 +224,7 @@
         "h": 150
       }
     },
-    "spells_slash_3.png": {
+    "spells_slash_3": {
       "frame": {
         "x": 2300,
         "y": 566,
@@ -232,7 +232,7 @@
         "h": 150
       }
     },
-    "spells_slash_4.png": {
+    "spells_slash_4": {
       "frame": {
         "x": 2046,
         "y": 718,
@@ -240,7 +240,7 @@
         "h": 150
       }
     },
-    "spells_slash_5.png": {
+    "spells_slash_5": {
       "frame": {
         "x": 2174,
         "y": 718,
@@ -248,7 +248,7 @@
         "h": 150
       }
     },
-    "spells_slash_6.png": {
+    "spells_slash_6": {
       "frame": {
         "x": 2300,
         "y": 718,
@@ -256,7 +256,39 @@
         "h": 150
       }
     },
-    "spells_range.png": {
+    "spells_arcaneCircle_1": {
+      "frame": {
+        "x": 2046,
+        "y": 870,
+        "w": 256,
+        "h": 128
+      }
+    },
+    "spells_arcaneCircle_2": {
+      "frame": {
+        "x": 2046,
+        "y": 1000,
+        "w": 256,
+        "h": 128
+      }
+    },
+    "spells_arcaneCircle_3": {
+      "frame": {
+        "x": 2046,
+        "y": 1130,
+        "w": 256,
+        "h": 128
+      }
+    },
+    "spells_arcaneCircle_4": {
+      "frame": {
+        "x": 2046,
+        "y": 1260,
+        "w": 256,
+        "h": 128
+      }
+    },
+    "spells_fireBomb_1": {
       "frame": {
         "x": 2391,
         "y": 342,
@@ -264,273 +296,555 @@
         "h": 64
       }
     },
-    "spells_arrowBody.png": {
+    "spells_fireBomb_10": {
       "frame": {
         "x": 2391,
         "y": 408,
-        "w": 32,
-        "h": 32
+        "w": 64,
+        "h": 64
       }
     },
-    "spells_arrowTip.png": {
-      "frame": {
-        "x": 2425,
-        "y": 408,
-        "w": 32,
-        "h": 32
-      }
-    },
-    "shield1.png": {
+    "spells_fireBomb_11": {
       "frame": {
         "x": 2391,
-        "y": 442,
+        "y": 474,
         "w": 64,
-        "h": 32
+        "h": 64
       }
     },
-    "shield2.png": {
+    "spells_fireBomb_12": {
       "frame": {
-        "x": 2391,
-        "y": 476,
+        "x": 2304,
+        "y": 870,
         "w": 64,
-        "h": 32
+        "h": 64
       }
     },
-    "shield3.png": {
+    "spells_fireBomb_13": {
       "frame": {
-        "x": 2391,
-        "y": 510,
+        "x": 2370,
+        "y": 870,
         "w": 64,
-        "h": 32
+        "h": 64
       }
     },
-    "shield4.png": {
+    "spells_fireBomb_14": {
+      "frame": {
+        "x": 2304,
+        "y": 1000,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "spells_fireBomb_15": {
+      "frame": {
+        "x": 2370,
+        "y": 1000,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "spells_fireBomb_2": {
+      "frame": {
+        "x": 2304,
+        "y": 1130,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "spells_fireBomb_3": {
+      "frame": {
+        "x": 2370,
+        "y": 1130,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "spells_fireBomb_4": {
+      "frame": {
+        "x": 2304,
+        "y": 1260,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "spells_fireBomb_5": {
+      "frame": {
+        "x": 2370,
+        "y": 1260,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "spells_fireBomb_6": {
       "frame": {
         "x": 2046,
-        "y": 870,
+        "y": 1390,
         "w": 64,
-        "h": 32
+        "h": 64
       }
     },
-    "shield5.png": {
+    "spells_fireBomb_7": {
       "frame": {
         "x": 2112,
-        "y": 870,
+        "y": 1390,
         "w": 64,
-        "h": 32
+        "h": 64
       }
     },
-    "shield6.png": {
+    "spells_fireBomb_8": {
       "frame": {
         "x": 2178,
-        "y": 870,
+        "y": 1390,
         "w": 64,
-        "h": 32
+        "h": 64
       }
     },
-    "shield7.png": {
+    "spells_fireBomb_9": {
       "frame": {
         "x": 2244,
-        "y": 870,
+        "y": 1390,
         "w": 64,
-        "h": 32
+        "h": 64
       }
     },
-    "shield8.png": {
+    "spells_range": {
       "frame": {
         "x": 2310,
-        "y": 870,
+        "y": 1390,
         "w": 64,
-        "h": 32
+        "h": 64
       }
     },
-    "water1.png": {
-      "frame": {
-        "x": 2376,
-        "y": 870,
-        "w": 64,
-        "h": 32
-      }
-    },
-    "water2.png": {
+    "impact1": {
       "frame": {
         "x": 2046,
-        "y": 904,
-        "w": 64,
-        "h": 32
+        "y": 1456,
+        "w": 256,
+        "h": 64
       }
     },
-    "water3.png": {
+    "impact2": {
       "frame": {
-        "x": 2112,
-        "y": 904,
-        "w": 64,
-        "h": 32
+        "x": 2046,
+        "y": 1522,
+        "w": 256,
+        "h": 64
       }
     },
-    "water4.png": {
+    "impact3": {
       "frame": {
-        "x": 2178,
-        "y": 904,
-        "w": 64,
-        "h": 32
+        "x": 2046,
+        "y": 1588,
+        "w": 256,
+        "h": 64
       }
     },
-    "spells_lock_1.png": {
+    "impact4": {
+      "frame": {
+        "x": 2046,
+        "y": 1654,
+        "w": 256,
+        "h": 64
+      }
+    },
+    "impact5": {
+      "frame": {
+        "x": 2046,
+        "y": 1720,
+        "w": 256,
+        "h": 64
+      }
+    },
+    "impact6": {
+      "frame": {
+        "x": 2046,
+        "y": 1786,
+        "w": 256,
+        "h": 64
+      }
+    },
+    "impact7": {
+      "frame": {
+        "x": 2046,
+        "y": 1852,
+        "w": 256,
+        "h": 64
+      }
+    },
+    "spells_arrowBody": {
       "frame": {
         "x": 2427,
         "y": 566,
-        "w": 26,
-        "h": 26
+        "w": 32,
+        "h": 32
       }
     },
-    "spells_lock_2.png": {
+    "spells_arrowTip": {
       "frame": {
         "x": 2427,
-        "y": 594,
-        "w": 26,
-        "h": 26
+        "y": 600,
+        "w": 32,
+        "h": 32
       }
     },
-    "spells_lock_3.png": {
+    "shield1": {
+      "frame": {
+        "x": 2304,
+        "y": 936,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "shield2": {
+      "frame": {
+        "x": 2370,
+        "y": 936,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "shield3": {
+      "frame": {
+        "x": 2304,
+        "y": 1066,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "shield4": {
+      "frame": {
+        "x": 2370,
+        "y": 1066,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "shield5": {
+      "frame": {
+        "x": 2304,
+        "y": 1196,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "shield6": {
+      "frame": {
+        "x": 2370,
+        "y": 1196,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "shield7": {
+      "frame": {
+        "x": 2304,
+        "y": 1326,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "shield8": {
+      "frame": {
+        "x": 2370,
+        "y": 1326,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "water1": {
+      "frame": {
+        "x": 2376,
+        "y": 1390,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "water2": {
+      "frame": {
+        "x": 2304,
+        "y": 1456,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "water3": {
+      "frame": {
+        "x": 2370,
+        "y": 1456,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "water4": {
+      "frame": {
+        "x": 2304,
+        "y": 1522,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "wings1": {
+      "frame": {
+        "x": 2370,
+        "y": 1522,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "wings2": {
+      "frame": {
+        "x": 2304,
+        "y": 1588,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "wings3": {
+      "frame": {
+        "x": 2370,
+        "y": 1588,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "wings4": {
+      "frame": {
+        "x": 2304,
+        "y": 1654,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "wings5": {
+      "frame": {
+        "x": 2370,
+        "y": 1654,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "wings6": {
+      "frame": {
+        "x": 2304,
+        "y": 1720,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "wings7": {
+      "frame": {
+        "x": 2370,
+        "y": 1720,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "wings8": {
+      "frame": {
+        "x": 2304,
+        "y": 1786,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "spells_lock_1": {
       "frame": {
         "x": 2427,
-        "y": 622,
+        "y": 634,
         "w": 26,
         "h": 26
       }
     },
-    "spells_arrowDown.png": {
+    "spells_lock_2": {
+      "frame": {
+        "x": 2427,
+        "y": 662,
+        "w": 26,
+        "h": 26
+      }
+    },
+    "spells_lock_3": {
+      "frame": {
+        "x": 2427,
+        "y": 690,
+        "w": 26,
+        "h": 26
+      }
+    },
+    "spells_arrowDown": {
       "frame": {
         "x": 2391,
-        "y": 544,
+        "y": 540,
         "w": 20,
         "h": 20
       }
     },
-    "spells_arrowLeft.png": {
+    "spells_arrowLeft": {
       "frame": {
         "x": 2413,
-        "y": 544,
+        "y": 540,
         "w": 20,
         "h": 20
       }
     },
-    "spells_arrowRight.png": {
+    "spells_arrowRight": {
       "frame": {
         "x": 2435,
-        "y": 544,
+        "y": 540,
         "w": 20,
         "h": 20
       }
     },
-    "spells_fireball_1.png": {
+    "spells_fireball_1": {
       "frame": {
         "x": 2427,
-        "y": 650,
+        "y": 718,
         "w": 12,
         "h": 12
       }
     },
-    "spells_fireball_2.png": {
+    "spells_fireball_2": {
       "frame": {
         "x": 2441,
-        "y": 650,
+        "y": 718,
         "w": 12,
         "h": 12
       }
     },
-    "spells_fireball_3.png": {
+    "spells_fireball_3": {
       "frame": {
         "x": 2427,
-        "y": 664,
+        "y": 732,
         "w": 12,
         "h": 12
       }
     },
-    "spells_fireball_4.png": {
+    "spells_fireball_4": {
       "frame": {
         "x": 2441,
-        "y": 664,
+        "y": 732,
         "w": 12,
         "h": 12
       }
     }
   },
   "animations": {
+    "impact": [
+      "impact1",
+      "impact2",
+      "impact3",
+      "impact4",
+      "impact5",
+      "impact6",
+      "impact7"
+    ],
     "shield": [
-      "shield1.png",
-      "shield2.png",
-      "shield3.png",
-      "shield4.png",
-      "shield5.png",
-      "shield6.png",
-      "shield7.png",
-      "shield8.png"
+      "shield1",
+      "shield2",
+      "shield3",
+      "shield4",
+      "shield5",
+      "shield6",
+      "shield7",
+      "shield8"
     ],
     "wave": [
-      "water1.png",
-      "water2.png",
-      "water3.png",
-      "water4.png"
+      "water1",
+      "water2",
+      "water3",
+      "water4"
+    ],
+    "wings": [
+      "wings1",
+      "wings2",
+      "wings3",
+      "wings4",
+      "wings5",
+      "wings6",
+      "wings7",
+      "wings8"
     ],
     "wizard_attack": [
-      "wizard_attack_1.png",
-      "wizard_attack_2.png",
-      "wizard_attack_3.png"
+      "wizard_attack_1",
+      "wizard_attack_2",
+      "wizard_attack_3"
     ],
     "wizard_dead": [
-      "wizard_dead_1.png",
-      "wizard_dead_2.png",
-      "wizard_dead_3.png",
-      "wizard_dead_4.png"
+      "wizard_dead_1",
+      "wizard_dead_2",
+      "wizard_dead_3",
+      "wizard_dead_4"
     ],
     "wizard_hurt": [
-      "wizard_hurt_1.png",
-      "wizard_hurt_2.png",
-      "wizard_hurt_3.png"
+      "wizard_hurt_1",
+      "wizard_hurt_2",
+      "wizard_hurt_3"
     ],
     "wizard_jump": [
-      "wizard_jump_1.png",
-      "wizard_jump_2.png",
-      "wizard_jump_3.png"
+      "wizard_jump_1",
+      "wizard_jump_2",
+      "wizard_jump_3"
     ],
     "wizard_run": [
-      "wizard_run_1.png",
-      "wizard_run_2.png",
-      "wizard_run_3.png",
-      "wizard_run_4.png"
+      "wizard_run_1",
+      "wizard_run_2",
+      "wizard_run_3",
+      "wizard_run_4"
     ],
     "wizard_idle": [
-      "wizard_idle_1.png",
-      "wizard_idle_2.png",
-      "wizard_idle_3.png",
-      "wizard_idle_4.png"
+      "wizard_idle_1",
+      "wizard_idle_2",
+      "wizard_idle_3",
+      "wizard_idle_4"
     ],
     "wizard_walk": [
-      "wizard_walk_1.png",
-      "wizard_walk_2.png",
-      "wizard_walk_3.png",
-      "wizard_walk_4.png"
+      "wizard_walk_1",
+      "wizard_walk_2",
+      "wizard_walk_3",
+      "wizard_walk_4"
     ],
     "spells_slash": [
-      "spells_slash_1.png",
-      "spells_slash_2.png",
-      "spells_slash_3.png",
-      "spells_slash_4.png",
-      "spells_slash_5.png",
-      "spells_slash_6.png"
+      "spells_slash_1",
+      "spells_slash_2",
+      "spells_slash_3",
+      "spells_slash_4",
+      "spells_slash_5",
+      "spells_slash_6"
+    ],
+    "spells_arcaneCircle": [
+      "spells_arcaneCircle_1",
+      "spells_arcaneCircle_2",
+      "spells_arcaneCircle_3",
+      "spells_arcaneCircle_4"
+    ],
+    "spells_fireBomb": [
+      "spells_fireBomb_1",
+      "spells_fireBomb_2",
+      "spells_fireBomb_3",
+      "spells_fireBomb_4",
+      "spells_fireBomb_5",
+      "spells_fireBomb_6",
+      "spells_fireBomb_7",
+      "spells_fireBomb_8",
+      "spells_fireBomb_9",
+      "spells_fireBomb_10",
+      "spells_fireBomb_11",
+      "spells_fireBomb_12",
+      "spells_fireBomb_13",
+      "spells_fireBomb_14",
+      "spells_fireBomb_15"
     ],
     "spells_lock": [
-      "spells_lock_1.png",
-      "spells_lock_2.png",
-      "spells_lock_3.png"
+      "spells_lock_1",
+      "spells_lock_2",
+      "spells_lock_3"
     ],
     "spells_fireball": [
-      "spells_fireball_1.png",
-      "spells_fireball_2.png",
-      "spells_fireball_3.png",
-      "spells_fireball_4.png"
+      "spells_fireball_1",
+      "spells_fireball_2",
+      "spells_fireball_3",
+      "spells_fireball_4"
     ]
   },
   "meta": {
