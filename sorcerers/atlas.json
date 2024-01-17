@@ -8,882 +8,1066 @@
         "h": 808
       }
     },
-    "wizard_attack_3": {
-      "frame": {
-        "x": 182,
-        "y": 1,
-        "w": 699,
-        "h": 418
-      }
-    },
-    "wizard_dead_1": {
-      "frame": {
-        "x": 883,
-        "y": 1,
-        "w": 417,
-        "h": 397
-      }
-    },
-    "wizard_hurt_1": {
-      "frame": {
-        "x": 883,
-        "y": 400,
-        "w": 417,
-        "h": 397
-      }
-    },
-    "wizard_hurt_3": {
-      "frame": {
-        "x": 1,
-        "y": 811,
-        "w": 417,
-        "h": 397
-      }
-    },
-    "wizard_attack_2": {
-      "frame": {
-        "x": 420,
-        "y": 811,
-        "w": 618,
-        "h": 391
-      }
-    },
-    "wizard_jump_2": {
-      "frame": {
-        "x": 182,
-        "y": 421,
-        "w": 312,
-        "h": 381
-      }
-    },
-    "wizard_run_1": {
-      "frame": {
-        "x": 1302,
-        "y": 1,
-        "w": 398,
-        "h": 375
-      }
-    },
-    "wizard_run_2": {
-      "frame": {
-        "x": 1302,
-        "y": 378,
-        "w": 398,
-        "h": 375
-      }
-    },
-    "wizard_run_3": {
-      "frame": {
-        "x": 1302,
-        "y": 755,
-        "w": 398,
-        "h": 375
-      }
-    },
-    "wizard_run_4": {
-      "frame": {
-        "x": 1,
-        "y": 1210,
-        "w": 398,
-        "h": 375
-      }
-    },
-    "wizard_hurt_2": {
-      "frame": {
-        "x": 401,
-        "y": 1210,
-        "w": 417,
-        "h": 361
-      }
-    },
-    "wizard_idle_1": {
-      "frame": {
-        "x": 496,
-        "y": 421,
-        "w": 342,
-        "h": 360
-      }
-    },
-    "wizard_walk_1": {
-      "frame": {
-        "x": 820,
-        "y": 1210,
-        "w": 342,
-        "h": 360
-      }
-    },
-    "wizard_idle_2": {
-      "frame": {
-        "x": 1164,
-        "y": 1210,
-        "w": 342,
-        "h": 354
-      }
-    },
-    "wizard_idle_3": {
-      "frame": {
-        "x": 1702,
-        "y": 1,
-        "w": 342,
-        "h": 354
-      }
-    },
-    "wizard_idle_4": {
-      "frame": {
-        "x": 1702,
-        "y": 357,
-        "w": 342,
-        "h": 354
-      }
-    },
-    "wizard_walk_2": {
-      "frame": {
-        "x": 1702,
-        "y": 713,
-        "w": 342,
-        "h": 354
-      }
-    },
-    "wizard_walk_3": {
-      "frame": {
-        "x": 1702,
-        "y": 1069,
-        "w": 342,
-        "h": 354
-      }
-    },
-    "wizard_walk_4": {
-      "frame": {
-        "x": 1,
-        "y": 1587,
-        "w": 342,
-        "h": 354
-      }
-    },
-    "wizard_jump_1": {
-      "frame": {
-        "x": 345,
-        "y": 1587,
-        "w": 413,
-        "h": 348
-      }
-    },
-    "wizard_jump_3": {
-      "frame": {
-        "x": 760,
-        "y": 1587,
-        "w": 413,
-        "h": 348
-      }
-    },
-    "wizard_attack_1": {
-      "frame": {
-        "x": 1175,
-        "y": 1587,
-        "w": 402,
-        "h": 343
-      }
-    },
-    "wizard_dead_2": {
-      "frame": {
-        "x": 1579,
-        "y": 1587,
-        "w": 417,
-        "h": 339
-      }
-    },
-    "wizard_dead_3": {
-      "frame": {
-        "x": 2046,
-        "y": 1,
-        "w": 417,
-        "h": 339
-      }
-    },
-    "wizard_dead_4": {
-      "frame": {
-        "x": 2046,
-        "y": 342,
-        "w": 343,
-        "h": 222
-      }
-    },
     "spells_slash_1": {
       "frame": {
-        "x": 2046,
-        "y": 566,
+        "x": 182,
+        "y": 1,
         "w": 126,
         "h": 150
       }
     },
     "spells_slash_2": {
       "frame": {
-        "x": 2174,
-        "y": 566,
+        "x": 182,
+        "y": 153,
         "w": 124,
         "h": 150
       }
     },
     "spells_slash_3": {
       "frame": {
-        "x": 2300,
-        "y": 566,
+        "x": 182,
+        "y": 305,
         "w": 125,
         "h": 150
       }
     },
     "spells_slash_4": {
       "frame": {
-        "x": 2046,
-        "y": 718,
+        "x": 182,
+        "y": 457,
         "w": 126,
         "h": 150
       }
     },
     "spells_slash_5": {
       "frame": {
-        "x": 2174,
-        "y": 718,
+        "x": 182,
+        "y": 609,
         "w": 124,
         "h": 150
       }
     },
     "spells_slash_6": {
       "frame": {
-        "x": 2300,
-        "y": 718,
+        "x": 310,
+        "y": 1,
         "w": 125,
         "h": 150
       }
     },
     "spells_arcaneCircle_1": {
       "frame": {
-        "x": 2046,
-        "y": 870,
+        "x": 437,
+        "y": 1,
         "w": 256,
         "h": 128
       }
     },
     "spells_arcaneCircle_2": {
       "frame": {
-        "x": 2046,
-        "y": 1000,
+        "x": 437,
+        "y": 131,
         "w": 256,
         "h": 128
       }
     },
     "spells_arcaneCircle_3": {
       "frame": {
-        "x": 2046,
-        "y": 1130,
+        "x": 437,
+        "y": 261,
         "w": 256,
         "h": 128
       }
     },
     "spells_arcaneCircle_4": {
       "frame": {
-        "x": 2046,
-        "y": 1260,
+        "x": 437,
+        "y": 391,
         "w": 256,
         "h": 128
       }
     },
+    "elf_fall_1": {
+      "frame": {
+        "x": 437,
+        "y": 521,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_fall_2": {
+      "frame": {
+        "x": 537,
+        "y": 521,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_fall_3": {
+      "frame": {
+        "x": 437,
+        "y": 609,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_fall_4": {
+      "frame": {
+        "x": 537,
+        "y": 609,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_float_1": {
+      "frame": {
+        "x": 437,
+        "y": 697,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_float_2": {
+      "frame": {
+        "x": 537,
+        "y": 697,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_float_3": {
+      "frame": {
+        "x": 310,
+        "y": 153,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_float_4": {
+      "frame": {
+        "x": 310,
+        "y": 241,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_idle_1": {
+      "frame": {
+        "x": 310,
+        "y": 329,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_idle_2": {
+      "frame": {
+        "x": 310,
+        "y": 417,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_idle_3": {
+      "frame": {
+        "x": 310,
+        "y": 505,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_idle_4": {
+      "frame": {
+        "x": 310,
+        "y": 593,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_jump_1": {
+      "frame": {
+        "x": 310,
+        "y": 681,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_jump_2": {
+      "frame": {
+        "x": 695,
+        "y": 1,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_jump_3": {
+      "frame": {
+        "x": 695,
+        "y": 89,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_jump_4": {
+      "frame": {
+        "x": 695,
+        "y": 177,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_jump_5": {
+      "frame": {
+        "x": 695,
+        "y": 265,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_land_2": {
+      "frame": {
+        "x": 695,
+        "y": 353,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_land_3": {
+      "frame": {
+        "x": 695,
+        "y": 441,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_land_4": {
+      "frame": {
+        "x": 695,
+        "y": 529,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_run_1": {
+      "frame": {
+        "x": 695,
+        "y": 617,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_run_2": {
+      "frame": {
+        "x": 695,
+        "y": 705,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_run_3": {
+      "frame": {
+        "x": 795,
+        "y": 1,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_run_4": {
+      "frame": {
+        "x": 795,
+        "y": 89,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_run_5": {
+      "frame": {
+        "x": 795,
+        "y": 177,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_run_6": {
+      "frame": {
+        "x": 795,
+        "y": 265,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_run_7": {
+      "frame": {
+        "x": 795,
+        "y": 353,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_run_8": {
+      "frame": {
+        "x": 795,
+        "y": 441,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_spellIdle_1": {
+      "frame": {
+        "x": 795,
+        "y": 529,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_spellIdle_2": {
+      "frame": {
+        "x": 795,
+        "y": 617,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_spellIdle_3": {
+      "frame": {
+        "x": 795,
+        "y": 705,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_spellIdle_4": {
+      "frame": {
+        "x": 895,
+        "y": 1,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_spell_1": {
+      "frame": {
+        "x": 895,
+        "y": 89,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_spell_2": {
+      "frame": {
+        "x": 895,
+        "y": 177,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_spell_3": {
+      "frame": {
+        "x": 895,
+        "y": 265,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_spell_4": {
+      "frame": {
+        "x": 895,
+        "y": 353,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_spell_5": {
+      "frame": {
+        "x": 895,
+        "y": 441,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_spell_6": {
+      "frame": {
+        "x": 895,
+        "y": 529,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_walk_1": {
+      "frame": {
+        "x": 895,
+        "y": 617,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_walk_2": {
+      "frame": {
+        "x": 895,
+        "y": 705,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_walk_3": {
+      "frame": {
+        "x": 1,
+        "y": 811,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_walk_4": {
+      "frame": {
+        "x": 101,
+        "y": 811,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_walk_5": {
+      "frame": {
+        "x": 201,
+        "y": 811,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_walk_6": {
+      "frame": {
+        "x": 301,
+        "y": 811,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_walk_7": {
+      "frame": {
+        "x": 401,
+        "y": 811,
+        "w": 98,
+        "h": 86
+      }
+    },
+    "elf_walk_8": {
+      "frame": {
+        "x": 501,
+        "y": 811,
+        "w": 98,
+        "h": 86
+      }
+    },
     "spells_explosion_1": {
       "frame": {
-        "x": 2391,
-        "y": 342,
+        "x": 601,
+        "y": 811,
         "w": 64,
         "h": 64
       }
     },
     "spells_explosion_2": {
       "frame": {
-        "x": 2391,
-        "y": 408,
+        "x": 667,
+        "y": 811,
         "w": 64,
         "h": 64
       }
     },
     "spells_explosion_3": {
       "frame": {
-        "x": 2391,
-        "y": 474,
+        "x": 733,
+        "y": 811,
         "w": 64,
         "h": 64
       }
     },
     "spells_explosion_4": {
       "frame": {
-        "x": 2304,
-        "y": 870,
+        "x": 799,
+        "y": 811,
         "w": 64,
         "h": 64
       }
     },
     "spells_explosion_5": {
       "frame": {
-        "x": 2370,
-        "y": 870,
+        "x": 865,
+        "y": 811,
         "w": 64,
         "h": 64
       }
     },
     "spells_explosion_6": {
       "frame": {
-        "x": 2304,
-        "y": 1000,
+        "x": 1,
+        "y": 899,
         "w": 64,
         "h": 64
       }
     },
     "spells_fireBomb_1": {
       "frame": {
-        "x": 2370,
-        "y": 1000,
+        "x": 67,
+        "y": 899,
         "w": 64,
         "h": 64
       }
     },
     "spells_fireBomb_10": {
       "frame": {
-        "x": 2304,
-        "y": 1130,
+        "x": 133,
+        "y": 899,
         "w": 64,
         "h": 64
       }
     },
     "spells_fireBomb_11": {
       "frame": {
-        "x": 2370,
-        "y": 1130,
+        "x": 199,
+        "y": 899,
         "w": 64,
         "h": 64
       }
     },
     "spells_fireBomb_12": {
       "frame": {
-        "x": 2304,
-        "y": 1260,
+        "x": 265,
+        "y": 899,
         "w": 64,
         "h": 64
       }
     },
     "spells_fireBomb_13": {
       "frame": {
-        "x": 2370,
-        "y": 1260,
+        "x": 331,
+        "y": 899,
         "w": 64,
         "h": 64
       }
     },
     "spells_fireBomb_14": {
       "frame": {
-        "x": 2046,
-        "y": 1390,
+        "x": 397,
+        "y": 899,
         "w": 64,
         "h": 64
       }
     },
     "spells_fireBomb_15": {
       "frame": {
-        "x": 2112,
-        "y": 1390,
+        "x": 463,
+        "y": 899,
         "w": 64,
         "h": 64
       }
     },
     "spells_fireBomb_2": {
       "frame": {
-        "x": 2178,
-        "y": 1390,
+        "x": 529,
+        "y": 899,
         "w": 64,
         "h": 64
       }
     },
     "spells_fireBomb_3": {
       "frame": {
-        "x": 2244,
-        "y": 1390,
+        "x": 595,
+        "y": 899,
         "w": 64,
         "h": 64
       }
     },
     "spells_fireBomb_4": {
       "frame": {
-        "x": 2310,
-        "y": 1390,
+        "x": 661,
+        "y": 899,
         "w": 64,
         "h": 64
       }
     },
     "spells_fireBomb_5": {
       "frame": {
-        "x": 2376,
-        "y": 1390,
+        "x": 727,
+        "y": 899,
         "w": 64,
         "h": 64
       }
     },
     "spells_fireBomb_6": {
       "frame": {
-        "x": 2046,
-        "y": 1456,
+        "x": 793,
+        "y": 899,
         "w": 64,
         "h": 64
       }
     },
     "spells_fireBomb_7": {
       "frame": {
-        "x": 2112,
-        "y": 1456,
+        "x": 859,
+        "y": 899,
         "w": 64,
         "h": 64
       }
     },
     "spells_fireBomb_8": {
       "frame": {
-        "x": 2178,
-        "y": 1456,
+        "x": 925,
+        "y": 899,
         "w": 64,
         "h": 64
       }
     },
     "spells_fireBomb_9": {
       "frame": {
-        "x": 2244,
-        "y": 1456,
+        "x": 995,
+        "y": 1,
         "w": 64,
         "h": 64
       }
     },
     "spells_range": {
       "frame": {
-        "x": 2310,
-        "y": 1456,
+        "x": 995,
+        "y": 67,
         "w": 64,
         "h": 64
       }
     },
     "impact1": {
       "frame": {
-        "x": 2046,
-        "y": 1522,
+        "x": 1,
+        "y": 965,
         "w": 256,
         "h": 64
       }
     },
     "impact2": {
       "frame": {
-        "x": 2046,
-        "y": 1588,
+        "x": 259,
+        "y": 965,
         "w": 256,
         "h": 64
       }
     },
     "impact3": {
       "frame": {
-        "x": 2046,
-        "y": 1654,
+        "x": 517,
+        "y": 965,
         "w": 256,
         "h": 64
       }
     },
     "impact4": {
       "frame": {
-        "x": 2046,
-        "y": 1720,
+        "x": 775,
+        "y": 965,
         "w": 256,
         "h": 64
       }
     },
     "impact5": {
       "frame": {
-        "x": 2046,
-        "y": 1786,
+        "x": 1061,
+        "y": 1,
         "w": 256,
         "h": 64
       }
     },
     "impact6": {
       "frame": {
-        "x": 2046,
-        "y": 1852,
+        "x": 1061,
+        "y": 67,
         "w": 256,
         "h": 64
       }
     },
     "impact7": {
       "frame": {
-        "x": 1702,
-        "y": 1425,
+        "x": 1061,
+        "y": 133,
         "w": 256,
         "h": 64
       }
     },
     "spells_flame_1": {
       "frame": {
-        "x": 2304,
-        "y": 936,
+        "x": 1061,
+        "y": 199,
         "w": 40,
         "h": 40
       }
     },
     "spells_flame_2": {
       "frame": {
-        "x": 2346,
-        "y": 936,
+        "x": 1103,
+        "y": 199,
         "w": 40,
         "h": 40
       }
     },
     "spells_flame_3": {
       "frame": {
-        "x": 2388,
-        "y": 936,
+        "x": 1145,
+        "y": 199,
         "w": 40,
         "h": 40
       }
     },
     "spells_flame_4": {
       "frame": {
-        "x": 2304,
-        "y": 1066,
+        "x": 1187,
+        "y": 199,
         "w": 40,
         "h": 40
       }
     },
     "spells_arrowBody": {
       "frame": {
-        "x": 2427,
-        "y": 566,
+        "x": 1229,
+        "y": 199,
         "w": 32,
         "h": 32
       }
     },
     "spells_arrowTip": {
       "frame": {
-        "x": 2427,
-        "y": 600,
+        "x": 1263,
+        "y": 199,
         "w": 32,
         "h": 32
       }
     },
     "spells_puff_1": {
       "frame": {
-        "x": 2427,
-        "y": 634,
+        "x": 1061,
+        "y": 241,
         "w": 32,
         "h": 32
       }
     },
     "spells_puff_2": {
       "frame": {
-        "x": 2427,
-        "y": 668,
+        "x": 1095,
+        "y": 241,
         "w": 32,
         "h": 32
       }
     },
     "spells_puff_3": {
       "frame": {
-        "x": 2427,
-        "y": 718,
+        "x": 1129,
+        "y": 241,
         "w": 32,
         "h": 32
       }
     },
     "spells_puff_4": {
       "frame": {
-        "x": 2427,
-        "y": 752,
+        "x": 1163,
+        "y": 241,
         "w": 32,
         "h": 32
       }
     },
     "spells_puff_5": {
       "frame": {
-        "x": 2427,
-        "y": 786,
+        "x": 1197,
+        "y": 241,
         "w": 32,
         "h": 32
       }
     },
     "spells_sparkle_1": {
       "frame": {
-        "x": 2427,
-        "y": 820,
+        "x": 1231,
+        "y": 241,
         "w": 32,
         "h": 32
       }
     },
     "spells_sparkle_2": {
       "frame": {
-        "x": 2430,
-        "y": 936,
+        "x": 1265,
+        "y": 241,
         "w": 32,
         "h": 32
       }
     },
     "spells_sparkle_3": {
       "frame": {
-        "x": 2346,
-        "y": 1066,
+        "x": 1061,
+        "y": 275,
         "w": 32,
         "h": 32
       }
     },
     "spells_sparkle_4": {
       "frame": {
-        "x": 2380,
-        "y": 1066,
+        "x": 1095,
+        "y": 275,
         "w": 32,
         "h": 32
       }
     },
     "spells_sparkle_5": {
       "frame": {
-        "x": 2414,
-        "y": 1066,
+        "x": 1129,
+        "y": 275,
         "w": 32,
         "h": 32
       }
     },
     "shield1": {
       "frame": {
-        "x": 2304,
-        "y": 1196,
+        "x": 1163,
+        "y": 275,
         "w": 64,
         "h": 32
       }
     },
     "shield2": {
       "frame": {
-        "x": 2370,
-        "y": 1196,
+        "x": 1229,
+        "y": 275,
         "w": 64,
         "h": 32
       }
     },
     "shield3": {
       "frame": {
-        "x": 2304,
-        "y": 1326,
+        "x": 1061,
+        "y": 309,
         "w": 64,
         "h": 32
       }
     },
     "shield4": {
       "frame": {
-        "x": 2370,
-        "y": 1326,
+        "x": 1127,
+        "y": 309,
         "w": 64,
         "h": 32
       }
     },
     "shield5": {
       "frame": {
-        "x": 2376,
-        "y": 1456,
+        "x": 1193,
+        "y": 309,
         "w": 64,
         "h": 32
       }
     },
     "shield6": {
       "frame": {
-        "x": 2304,
-        "y": 1522,
+        "x": 1061,
+        "y": 343,
         "w": 64,
         "h": 32
       }
     },
     "shield7": {
       "frame": {
-        "x": 2370,
-        "y": 1522,
+        "x": 1127,
+        "y": 343,
         "w": 64,
         "h": 32
       }
     },
     "shield8": {
       "frame": {
-        "x": 2304,
-        "y": 1588,
+        "x": 1193,
+        "y": 343,
         "w": 64,
         "h": 32
       }
     },
     "water1": {
       "frame": {
-        "x": 2370,
-        "y": 1588,
+        "x": 1061,
+        "y": 377,
         "w": 64,
         "h": 32
       }
     },
     "water2": {
       "frame": {
-        "x": 2304,
-        "y": 1654,
+        "x": 1127,
+        "y": 377,
         "w": 64,
         "h": 32
       }
     },
     "water3": {
       "frame": {
-        "x": 2370,
-        "y": 1654,
+        "x": 1193,
+        "y": 377,
         "w": 64,
         "h": 32
       }
     },
     "water4": {
       "frame": {
-        "x": 2304,
-        "y": 1720,
+        "x": 1061,
+        "y": 411,
         "w": 64,
         "h": 32
       }
     },
     "wings1": {
       "frame": {
-        "x": 2370,
-        "y": 1720,
+        "x": 1127,
+        "y": 411,
         "w": 64,
         "h": 32
       }
     },
     "wings2": {
       "frame": {
-        "x": 2304,
-        "y": 1786,
+        "x": 1193,
+        "y": 411,
         "w": 64,
         "h": 32
       }
     },
     "wings3": {
       "frame": {
-        "x": 2370,
-        "y": 1786,
+        "x": 1061,
+        "y": 445,
         "w": 64,
         "h": 32
       }
     },
     "wings4": {
       "frame": {
-        "x": 2304,
-        "y": 1852,
+        "x": 1127,
+        "y": 445,
         "w": 64,
         "h": 32
       }
     },
     "wings5": {
       "frame": {
-        "x": 2370,
-        "y": 1852,
+        "x": 1193,
+        "y": 445,
         "w": 64,
         "h": 32
       }
     },
     "wings6": {
       "frame": {
-        "x": 1960,
-        "y": 1425,
+        "x": 1061,
+        "y": 479,
         "w": 64,
         "h": 32
       }
     },
     "wings7": {
       "frame": {
-        "x": 1702,
-        "y": 1491,
+        "x": 1127,
+        "y": 479,
         "w": 64,
         "h": 32
       }
     },
     "wings8": {
       "frame": {
-        "x": 1768,
-        "y": 1491,
+        "x": 1193,
+        "y": 479,
         "w": 64,
         "h": 32
       }
     },
+    "spells_cursor_1": {
+      "frame": {
+        "x": 1259,
+        "y": 309,
+        "w": 26,
+        "h": 26
+      }
+    },
+    "spells_cursor_2": {
+      "frame": {
+        "x": 1287,
+        "y": 309,
+        "w": 26,
+        "h": 26
+      }
+    },
     "spells_lock_1": {
       "frame": {
-        "x": 2436,
-        "y": 870,
+        "x": 1259,
+        "y": 343,
         "w": 26,
         "h": 26
       }
     },
     "spells_lock_2": {
       "frame": {
-        "x": 2436,
-        "y": 898,
+        "x": 1287,
+        "y": 343,
         "w": 26,
         "h": 26
       }
     },
     "spells_lock_3": {
       "frame": {
-        "x": 2436,
-        "y": 1000,
+        "x": 1259,
+        "y": 377,
         "w": 26,
         "h": 26
       }
     },
     "spells_arrowDown": {
       "frame": {
-        "x": 2391,
-        "y": 540,
+        "x": 1297,
+        "y": 199,
         "w": 20,
         "h": 20
       }
     },
     "spells_arrowLeft": {
       "frame": {
-        "x": 2413,
-        "y": 540,
+        "x": 1295,
+        "y": 275,
         "w": 20,
         "h": 20
       }
     },
     "spells_arrowRight": {
       "frame": {
-        "x": 2435,
-        "y": 540,
+        "x": 1287,
+        "y": 377,
         "w": 20,
         "h": 20
       }
     },
     "spells_fireball_1": {
       "frame": {
-        "x": 2427,
-        "y": 702,
+        "x": 1299,
+        "y": 241,
         "w": 12,
         "h": 12
       }
     },
     "spells_fireball_2": {
       "frame": {
-        "x": 2441,
-        "y": 702,
+        "x": 1299,
+        "y": 255,
         "w": 12,
         "h": 12
       }
     },
     "spells_fireball_3": {
       "frame": {
-        "x": 2427,
-        "y": 854,
+        "x": 1259,
+        "y": 411,
         "w": 12,
         "h": 12
       }
     },
     "spells_fireball_4": {
       "frame": {
-        "x": 2441,
-        "y": 854,
+        "x": 1273,
+        "y": 411,
         "w": 12,
         "h": 12
       }
@@ -925,45 +1109,6 @@
       "wings7",
       "wings8"
     ],
-    "wizard_attack": [
-      "wizard_attack_1",
-      "wizard_attack_2",
-      "wizard_attack_3"
-    ],
-    "wizard_dead": [
-      "wizard_dead_1",
-      "wizard_dead_2",
-      "wizard_dead_3",
-      "wizard_dead_4"
-    ],
-    "wizard_hurt": [
-      "wizard_hurt_1",
-      "wizard_hurt_2",
-      "wizard_hurt_3"
-    ],
-    "wizard_jump": [
-      "wizard_jump_1",
-      "wizard_jump_2",
-      "wizard_jump_3"
-    ],
-    "wizard_run": [
-      "wizard_run_1",
-      "wizard_run_2",
-      "wizard_run_3",
-      "wizard_run_4"
-    ],
-    "wizard_idle": [
-      "wizard_idle_1",
-      "wizard_idle_2",
-      "wizard_idle_3",
-      "wizard_idle_4"
-    ],
-    "wizard_walk": [
-      "wizard_walk_1",
-      "wizard_walk_2",
-      "wizard_walk_3",
-      "wizard_walk_4"
-    ],
     "spells_slash": [
       "spells_slash_1",
       "spells_slash_2",
@@ -977,6 +1122,70 @@
       "spells_arcaneCircle_2",
       "spells_arcaneCircle_3",
       "spells_arcaneCircle_4"
+    ],
+    "elf_fall": [
+      "elf_fall_1",
+      "elf_fall_2",
+      "elf_fall_3",
+      "elf_fall_4"
+    ],
+    "elf_float": [
+      "elf_float_1",
+      "elf_float_2",
+      "elf_float_3",
+      "elf_float_4"
+    ],
+    "elf_idle": [
+      "elf_idle_1",
+      "elf_idle_2",
+      "elf_idle_3",
+      "elf_idle_4"
+    ],
+    "elf_jump": [
+      "elf_jump_1",
+      "elf_jump_2",
+      "elf_jump_3",
+      "elf_jump_4",
+      "elf_jump_5"
+    ],
+    "elf_land": [
+      "elf_land_2",
+      "elf_land_3",
+      "elf_land_4"
+    ],
+    "elf_run": [
+      "elf_run_1",
+      "elf_run_2",
+      "elf_run_3",
+      "elf_run_4",
+      "elf_run_5",
+      "elf_run_6",
+      "elf_run_7",
+      "elf_run_8"
+    ],
+    "elf_spellIdle": [
+      "elf_spellIdle_1",
+      "elf_spellIdle_2",
+      "elf_spellIdle_3",
+      "elf_spellIdle_4"
+    ],
+    "elf_spell": [
+      "elf_spell_1",
+      "elf_spell_2",
+      "elf_spell_3",
+      "elf_spell_4",
+      "elf_spell_5",
+      "elf_spell_6"
+    ],
+    "elf_walk": [
+      "elf_walk_1",
+      "elf_walk_2",
+      "elf_walk_3",
+      "elf_walk_4",
+      "elf_walk_5",
+      "elf_walk_6",
+      "elf_walk_7",
+      "elf_walk_8"
     ],
     "spells_explosion": [
       "spells_explosion_1",
@@ -1023,6 +1232,10 @@
       "spells_sparkle_4",
       "spells_sparkle_5"
     ],
+    "spells_cursor": [
+      "spells_cursor_1",
+      "spells_cursor_2"
+    ],
     "spells_lock": [
       "spells_lock_1",
       "spells_lock_2",
@@ -1040,8 +1253,8 @@
     "version": "1.0",
     "image": "atlas.png",
     "size": {
-      "w": 2464,
-      "h": 1942
+      "w": 1318,
+      "h": 1030
     }
   }
 }
