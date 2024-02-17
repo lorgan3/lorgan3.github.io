@@ -1552,6 +1552,38 @@
         "h": 16
       }
     },
+    "items_healthPotion": {
+      "frame": {
+        "x": 1377,
+        "y": 305,
+        "w": 16,
+        "h": 16
+      }
+    },
+    "items_manaPotion": {
+      "frame": {
+        "x": 1377,
+        "y": 323,
+        "w": 16,
+        "h": 16
+      }
+    },
+    "items_smallHealthPotion": {
+      "frame": {
+        "x": 1377,
+        "y": 353,
+        "w": 16,
+        "h": 16
+      }
+    },
+    "items_smallManaPotion": {
+      "frame": {
+        "x": 1377,
+        "y": 371,
+        "w": 16,
+        "h": 16
+      }
+    },
     "elf_arm": {
       "frame": {
         "x": 1377,
