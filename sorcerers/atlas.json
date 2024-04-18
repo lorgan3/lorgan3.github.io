@@ -2504,9 +2504,33 @@
         "h": 16
       }
     },
-    "spells_smoke_1": {
+    "spells_pebble_1": {
+      "frame": {
+        "x": 1546,
+        "y": 1228,
+        "w": 16,
+        "h": 16
+      }
+    },
+    "spells_pebble_2": {
       "frame": {
         "x": 1308,
+        "y": 1262,
+        "w": 16,
+        "h": 16
+      }
+    },
+    "spells_pebble_3": {
+      "frame": {
+        "x": 1326,
+        "y": 1262,
+        "w": 16,
+        "h": 16
+      }
+    },
+    "spells_smoke_1": {
+      "frame": {
+        "x": 1344,
         "y": 1262,
         "w": 32,
         "h": 16
@@ -2514,7 +2538,7 @@
     },
     "spells_smoke_2": {
       "frame": {
-        "x": 1342,
+        "x": 1378,
         "y": 1262,
         "w": 32,
         "h": 16
@@ -2522,7 +2546,7 @@
     },
     "spells_smoke_3": {
       "frame": {
-        "x": 1376,
+        "x": 1412,
         "y": 1262,
         "w": 32,
         "h": 16
@@ -2530,7 +2554,7 @@
     },
     "spells_smoke_4": {
       "frame": {
-        "x": 1410,
+        "x": 1446,
         "y": 1262,
         "w": 32,
         "h": 16
@@ -2538,7 +2562,7 @@
     },
     "spells_smoke_5": {
       "frame": {
-        "x": 1444,
+        "x": 1480,
         "y": 1262,
         "w": 32,
         "h": 16
@@ -2546,7 +2570,7 @@
     },
     "spells_smoke_6": {
       "frame": {
-        "x": 1478,
+        "x": 1514,
         "y": 1262,
         "w": 32,
         "h": 16
@@ -2554,15 +2578,15 @@
     },
     "spells_smoke_7": {
       "frame": {
-        "x": 1512,
-        "y": 1262,
+        "x": 1056,
+        "y": 969,
         "w": 32,
         "h": 16
       }
     },
     "spells_smoke_8": {
       "frame": {
-        "x": 1056,
+        "x": 1090,
         "y": 969,
         "w": 32,
         "h": 16
@@ -3009,6 +3033,11 @@
       "elf_blood_3",
       "elf_blood_4",
       "elf_blood_5"
+    ],
+    "spells_pebble": [
+      "spells_pebble_1",
+      "spells_pebble_2",
+      "spells_pebble_3"
     ],
     "spells_smoke": [
       "spells_smoke_1",
