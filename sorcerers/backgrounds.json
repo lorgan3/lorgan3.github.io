@@ -1,0 +1,46 @@
+{
+  "frames": {
+    "ocean_clouds1": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 480,
+        "h": 216
+      }
+    },
+    "ocean_clouds2": {
+      "frame": {
+        "x": 1,
+        "y": 219,
+        "w": 480,
+        "h": 216
+      }
+    },
+    "ocean_clouds3": {
+      "frame": {
+        "x": 483,
+        "y": 1,
+        "w": 480,
+        "h": 216
+      }
+    },
+    "ocean_water": {
+      "frame": {
+        "x": 483,
+        "y": 219,
+        "w": 480,
+        "h": 216
+      }
+    }
+  },
+  "animations": {},
+  "meta": {
+    "app": "https://github.com/lorgan3/sorcerers",
+    "version": "1.0",
+    "image": "backgrounds.png",
+    "size": {
+      "w": 964,
+      "h": 436
+    }
+  }
+}
