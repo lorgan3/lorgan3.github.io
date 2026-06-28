@@ -4,12 +4,33 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="A collection of web projects and games by Lorgan3, including Open Tower Defense, Sorcerers and more." />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lorgan3's projects" />
+    <meta property="og:description" content="A collection of web projects and games by Lorgan3, including Open Tower Defense, Sorcerers and more." />
+    <meta property="og:url" content="https://lorgan3.github.io/" />
+    <meta property="og:image" content="https://lorgan3.github.io/assets/Sorcerers.png" />
+    <meta name="twitter:card" content="summary" />
+
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+            }
+
+            .project {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            }
         }
 
         header {
@@ -47,6 +68,7 @@
             height: auto;
             display: block;
             width: 100%;
+            aspect-ratio: 1 / 1;
             image-rendering: pixelated;
         }
 
@@ -70,8 +92,14 @@
             overflow: hidden;
         }
 
-        .project:hover {
+        .project:hover,
+        .project:focus-visible {
             transform: scale(1.05);
+        }
+
+        .project:focus-visible {
+            outline: 3px solid #4da6ff;
+            outline-offset: 2px;
         }
     </style>
     <title>Lorgan3's projects</title>
@@ -86,40 +114,41 @@
 
     <div class="portfolio">
         <a href="https://lorgan3.github.io/open-td/" class="project">
-            <img src="assets/Open TD.png" alt="Open Tower Defense" />
-            <span class="overlay">
-                <h3 title="Open Tower Defense">Open Tower Defense</h3>
-            </span>
+            <img src="assets/Open TD.png" alt="Open Tower Defense" width="64" height="64" loading="lazy" />
+            <div class="overlay">
+                <h3>Open Tower Defense</h3>
+            </div>
         </a>
 
         <a href="https://lorgan3.github.io/sorcerers/" class="project">
-            <img src="assets/Sorcerers.png" alt="Sorcerers" />
-            <span class="overlay">
-                <h3 title="Sorcerers">Sorcerers</h3>
-            </span>
+            <img src="assets/Sorcerers.png" alt="Sorcerers" width="64" height="64" loading="lazy" />
+            <div class="overlay">
+                <h3>Sorcerers</h3>
+            </div>
         </a>
 
         <a href="https://lorgan3.github.io/playlist/" class="project">
-            <img src="assets/BeatSaber.png" alt="Beat Saber bookmarks to playlist converter" />
-            <span class="overlay">
+            <img src="assets/BeatSaber.png" alt="Beat Saber bookmarks to playlist converter" width="256" height="256"
+                loading="lazy" />
+            <div class="overlay">
                 <h3 title="Beat Saber bookmarks to playlist converter">
                     Beat Saber bookmarks to playlist converter
                 </h3>
-            </span>
+            </div>
         </a>
 
         <a href="https://lorgan3.github.io/set/" class="project">
-            <img src="assets/SetGame.png" alt="Set (game)" />
-            <span class="overlay">
-                <h3 title="Set (game)">Set (game)</h3>
-            </span>
+            <img src="assets/SetGame.png" alt="Set (game)" width="128" height="128" loading="lazy" />
+            <div class="overlay">
+                <h3>Set (game)</h3>
+            </div>
         </a>
 
         <a href="https://lorgan3.github.io/theta_rho_editor/" class="project">
-            <img src="assets/Theta Rho Editor.png" alt="Theta Rho Editor" />
-            <span class="overlay">
-                <h3 title="Theta Rho Editor">Theta Rho Editor</h3>
-            </span>
+            <img src="assets/Theta Rho Editor.png" alt="Theta Rho Editor" width="512" height="512" loading="lazy" />
+            <div class="overlay">
+                <h3>Theta Rho Editor</h3>
+            </div>
         </a>
     </div>
 </body>
