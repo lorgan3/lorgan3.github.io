@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <clipPath id="spade">
+      <path d="M 256 134
+               L 149 246
+               C 136 265, 139 275, 141 281
+               C 144 313, 168 344, 206 349
+               C 230 353, 249 346, 256 335
+               C 263 346, 282 353, 306 349
+               C 344 344, 368 313, 371 281
+               C 373 275, 376 265, 363 246
+               Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Card (cream interior, canvas around it transparent) -->
+  <rect x="73" y="30" width="366" height="452" rx="38"
+        fill="#fbf6eb" stroke="#0d0d0d" stroke-width="11" />
+
+  <!-- Spade: blue and yellow lobes split at centre, red kite on top -->
+  <g clip-path="url(#spade)">
+    <rect x="0" y="0" width="256" height="512" fill="#0a83ab" />
+    <rect x="256" y="0" width="256" height="512" fill="#fcb32a" />
+    <polygon points="256,134 187,206 256,285 325,206" fill="#e84f39" />
+  </g>
+
+  <!-- Spade outline -->
+  <path d="M 256 134
+           L 149 246
+           C 136 265, 139 275, 141 281
+           C 144 313, 168 344, 206 349
+           C 230 353, 249 346, 256 335
+           C 263 346, 282 353, 306 349
+           C 344 344, 368 313, 371 281
+           C 373 275, 376 265, 363 246
+           Z"
+        fill="none" stroke="#0d0d0d" stroke-width="10" stroke-linejoin="round" />
+
+  <!-- Stem -->
+  <path d="M 256 338 L 292 384 L 308 384 L 308 392 L 204 392 L 204 384 L 220 384 Z"
+        fill="#fcb32a" stroke="#0d0d0d" stroke-width="10" stroke-linejoin="round" />
+</svg>
