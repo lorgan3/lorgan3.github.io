@@ -7,10 +7,167 @@
     <meta name="theme-color" content="#1a202c" media="(prefers-color-scheme: dark)" />
     <meta name="description" content="Rain, minute by minute." />
     <title>Ombros</title>
-    <script type="module" crossorigin src="/ombros/assets/index-CEjoX1lg.js"></script>
-    <link rel="stylesheet" crossorigin href="/ombros/assets/index-BfHzfHax.css">
+    <script>
+      // App.svelte applies the theme override in an effect, which is a quarter
+      // of a second of the wrong theme on every load. That was survivable on a
+      // near-empty page and is not once the boot gauge below fills the screen.
+      // Guarded like storage.ts: localStorage throws outright in some
+      // private-mode configurations, and an unguarded read here would take the
+      // whole page down to prevent a flicker.
+      try {
+        var stored = JSON.parse(localStorage.getItem('ombros.settings.v1') || '{}').theme
+        if (stored === 'light' || stored === 'dark') {
+          document.documentElement.dataset.theme = stored
+        }
+      } catch (error) {
+        // Defaults to following the system, which is what most people want.
+      }
+    </script>
+    <style>
+      /* The boot gauge. Inline because it has to paint before the module loads,
+         which is the gap it exists to cover. app.css is imported from main.ts,
+         so in `pnpm dev` there is no stylesheet at all until then, and reading
+         --bg/--rule/--series here would leave it unstyled in exactly the place
+         it gets looked at. The three colours and the color-scheme block are
+         therefore duplicated from app.css. Keep them in step by hand. */
+      :root {
+        color-scheme: light dark;
+      }
+      :root[data-theme="light"] {
+        color-scheme: light;
+      }
+      :root[data-theme="dark"] {
+        color-scheme: dark;
+      }
+
+      #boot {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Optical centre. A true 50% reads as sitting low. */
+        padding-bottom: 10vh;
+        background: light-dark(#ffffff, #14181f);
+        transition: opacity 150ms ease-out;
+      }
+
+      #boot.gone {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #boot .gauge {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Clips the drops at the rim, so they read as falling into the tube
+         rather than through it. */
+      #boot .rain {
+        position: relative;
+        width: 48px;
+        height: 60px;
+        overflow: hidden;
+      }
+
+      #boot .rain i {
+        position: absolute;
+        top: 0;
+        width: 3px;
+        height: 9px;
+        border-radius: 50%;
+        background: light-dark(#1f5f96, #79b8ea);
+        /* 660ms cycle, four drops 165ms apart, so one lands every 165ms and
+           each surge of the fill below has a visible cause. The first three
+           delays are negative: at t=0 the rain is already falling. */
+        animation: boot-fall 660ms linear calc(-290ms + var(--n) * 165ms) infinite;
+      }
+
+      #boot .rain i:nth-child(1) { --n: 0; left: 9px; }
+      #boot .rain i:nth-child(2) { --n: 1; left: 30px; }
+      #boot .rain i:nth-child(3) { --n: 2; left: 20px; }
+      #boot .rain i:nth-child(4) { --n: 3; left: 37px; }
+
+      @keyframes boot-fall {
+        0% { transform: translateY(-14px); }
+        /* Impact at the rim, halfway through the cycle. */
+        50% { transform: translateY(60px); }
+        /* Back above the clip instantly, and wait there out of sight. */
+        50.01%, 100% { transform: translateY(-14px); }
+      }
+
+      #boot .tube {
+        position: relative;
+        width: 48px;
+        height: 144px;
+        border: 1.5px solid light-dark(#d8dee8, #2c3543);
+        border-radius: 6px 6px 12px 12px;
+        overflow: hidden;
+      }
+
+      #boot .level {
+        position: absolute;
+        inset: 0;
+        color: light-dark(#1f5f96, #79b8ea);
+        background: currentColor;
+        /* Four eased steps that abut exactly, one per drop impact. Abutting
+           rather than overlapping: there is no dwell between them, so it reads
+           as a surge rather than a staircase, and the last one lands on 700ms,
+           which is the floor. */
+        animation: boot-fill 700ms ease-out forwards;
+      }
+
+      @keyframes boot-fill {
+        0%, 5.71% { transform: translateY(100%); }
+        29.29% { transform: translateY(75%); }
+        52.86% { transform: translateY(50%); }
+        76.43% { transform: translateY(25%); }
+        100% { transform: translateY(0); }
+      }
+
+      /* The surface. Bulges above the level, and goes on being disturbed once
+         the tube is full, because the rain has not stopped. One ripple per
+         impact, small enough to read as agitation rather than sloshing. */
+      #boot .level::before {
+        content: "";
+        position: absolute;
+        top: -4px;
+        left: 0;
+        right: 0;
+        height: 8px;
+        border-radius: 50%;
+        background: currentColor;
+        animation: boot-ripple 165ms 700ms ease-in-out infinite;
+      }
+
+      @keyframes boot-ripple {
+        0%, 100% { transform: scaleY(1); }
+        50% { transform: scaleY(0.72); }
+      }
+
+      /* Nothing to complete, so there is nothing to hold for. App.svelte skips
+         the floor under the same query, which leaves reduced motion with the
+         behaviour the app has always had. */
+      @media (prefers-reduced-motion: reduce) {
+        #boot {
+          display: none;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="/ombros/assets/index-DrrGJSyi.js"></script>
+    <link rel="stylesheet" crossorigin href="/ombros/assets/index-CZ3wlrgw.css">
   <link rel="manifest" href="/ombros/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/ombros/registerSW.js"></script></head>
   <body>
     <div id="app"></div>
+    <!-- Removed, and cloned back for a location switch, by App.svelte. Later in
+         the document than #app, so it covers the sheets without a z-index. -->
+    <div id="boot" aria-hidden="true">
+      <div class="gauge">
+        <div class="rain"><i></i><i></i><i></i><i></i></div>
+        <div class="tube"><div class="level"></div></div>
+      </div>
+    </div>
   </body>
 </html>
