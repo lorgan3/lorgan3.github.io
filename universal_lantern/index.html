@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#b45309" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14181f" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content="Your LED strips, from your pocket." />
+    <title>Universal Lantern</title>
+    <script>
+      // Pre-apply the theme override before the module loads, so there is no
+      // flash of the wrong theme. Guarded: localStorage throws in some
+      // private-mode configurations. Key must match src/lib/storage.ts.
+      try {
+        var stored = JSON.parse(localStorage.getItem('universal_lantern.settings.v1') || '{}').theme
+        if (stored === 'light' || stored === 'dark') {
+          document.documentElement.dataset.theme = stored
+        }
+      } catch (error) {
+        // Follow the system.
+      }
+    </script>
+    <style>:root{--lightningcss-light:initial;--lightningcss-dark: ;color-scheme:light dark}@media (prefers-color-scheme:dark){:root{--lightningcss-light: ;--lightningcss-dark:initial}}:root[data-theme=light]{--lightningcss-light:initial;--lightningcss-dark: ;color-scheme:light}:root[data-theme=dark]{--lightningcss-light: ;--lightningcss-dark:initial;color-scheme:dark}</style>
+    <script type="module" crossorigin src="/universal_lantern/assets/index-C3xPGZit.js"></script>
+    <link rel="stylesheet" crossorigin href="/universal_lantern/assets/index-BcSaXvEK.css">
+  <link rel="manifest" href="/universal_lantern/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/universal_lantern/registerSW.js"></script></head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>

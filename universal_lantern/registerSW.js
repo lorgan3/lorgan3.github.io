@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/universal_lantern/sw.js', { scope: '/universal_lantern/' })})}
