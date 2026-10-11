@@ -529,6 +529,7 @@ export function buildSubmarine(engine, ui) {
       { label: 'Ga naar deel 2', action: () => { jumpTo(2); close(); } },
       { label: 'Ga naar deel 2 (boven water)', action: () => { jumpTo(3); close(); } },
       { label: 'Centreer blikrichting', action: () => { engine.recenter(); close(); } },
+      ...engine.viewMenuItems(),
       { label: 'Stoppen', danger: true, action: () => ui.exit() },
     ]);
     engine.openPanel(mesh, { onClick });

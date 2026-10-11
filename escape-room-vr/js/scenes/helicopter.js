@@ -404,6 +404,7 @@ export function buildHelicopter(engine, ui) {
       { label: 'Verder spelen', action: close },
       { label: 'Centreer blikrichting', action: () => { engine.recenter(); close(); } },
       { label: 'Radio terugzetten', action: () => { stopTx(); S.digits = [...DEFAULTS.digits]; save(); close(); } },
+      ...engine.viewMenuItems(),
       { label: 'Stoppen', danger: true, action: () => ui.exit() },
     ]);
     engine.openPanel(mesh, { onClick });

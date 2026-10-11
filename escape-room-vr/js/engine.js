@@ -4,6 +4,9 @@ import { sfx } from './audio.js';
 
 const EYE_HEIGHT = 1.6;
 const DWELL_SECONDS = 1.8;
+// Rough physical size of a CSS pixel on phones; the lens distance setting absorbs the error.
+const MM_PER_CSS_PX = 0.17;
+const VIEW_KEY = 'ertg-vr-view';
 
 // Device-orientation to quaternion (same math as three's old DeviceOrientationControls).
 const zee = new THREE.Vector3(0, 0, 1);
@@ -37,9 +40,10 @@ export class Engine {
     // Stereo eyes for cardboard mode.
     this.eyeL = new THREE.PerspectiveCamera(80, 1, 0.02, 600);
     this.eyeR = new THREE.PerspectiveCamera(80, 1, 0.02, 600);
-    this.eyeL.position.x = -0.032;
-    this.eyeR.position.x = 0.032;
     this.camera.add(this.eyeL, this.eyeR);
+    this.view = { lensMM: 62, depth: true };
+    try { Object.assign(this.view, JSON.parse(localStorage.getItem(VIEW_KEY) || '{}')); } catch (e) { /* ignore */ }
+    this.applyEyeSeparation();
 
     this.mode = 'screen'; // 'screen' | 'cardboard' | 'xr'
     this.yaw = 0;
@@ -148,14 +152,14 @@ export class Engine {
         ctx.beginPath(); ctx.arc(w / 2, h / 2, w * 0.47, 0, Math.PI * 2); ctx.fill();
       }
     });
-    const dist = 0.5;
+    const dist = 1.2;
     const planeSize = 2 * dist * Math.tan(THREE.MathUtils.degToRad(32));
     const mat = new THREE.MeshBasicMaterial({ map: rt.texture, alphaMap: mask.tex, transparent: true, depthTest: false, toneMapped: false });
     const plane = new THREE.Mesh(new THREE.PlaneGeometry(planeSize, planeSize), mat);
     plane.position.z = -dist;
     plane.renderOrder = 1100;
     // Black surround so the room is hidden while looking through.
-    const surround = new THREE.Mesh(new THREE.SphereGeometry(0.3, 24, 16), new THREE.MeshBasicMaterial({ color: 0x000000, side: THREE.BackSide, depthTest: false }));
+    const surround = new THREE.Mesh(new THREE.SphereGeometry(2, 24, 16), new THREE.MeshBasicMaterial({ color: 0x000000, side: THREE.BackSide, depthTest: false }));
     surround.renderOrder = 1050;
     this.camera.add(plane, surround);
     let hud = null;
@@ -212,6 +216,7 @@ export class Engine {
 
   async enterCardboard() {
     this.mode = 'cardboard';
+    this.resize();
     await this.enableGyro();
     try { await document.documentElement.requestFullscreen(); } catch (e) { /* not supported */ }
     try { await screen.orientation.lock('landscape'); } catch (e) { /* not supported */ }
@@ -282,7 +287,38 @@ export class Engine {
     this.eyeL.aspect = this.eyeR.aspect = (w / 2) / h;
     this.eyeL.updateProjectionMatrix();
     this.eyeR.updateProjectionMatrix();
+    // Shift each eye's image centre so it sits under the headset lens instead of in the middle
+    // of its half of the screen. Without this most phones need your eyes to diverge: double vision.
+    const quarter = w / 4;
+    const lensHalfPx = (this.view.lensMM / 2) / MM_PER_CSS_PX;
+    const shift = THREE.MathUtils.clamp((quarter - lensHalfPx) / quarter, -0.8, 0.8);
+    for (const [eye, sign] of [[this.eyeL, -1], [this.eyeR, 1]]) {
+      eye.projectionMatrix.elements[8] = sign * shift;
+      eye.projectionMatrixInverse.copy(eye.projectionMatrix).invert();
+    }
     if (!this.renderer.xr.isPresenting) this.renderer.setSize(w, h);
+  }
+
+  applyEyeSeparation() {
+    const half = this.view.depth ? 0.032 : 0;
+    this.eyeL.position.x = -half;
+    this.eyeR.position.x = half;
+  }
+
+  saveView() {
+    try { localStorage.setItem(VIEW_KEY, JSON.stringify(this.view)); } catch (e) { /* ignore */ }
+    this.applyEyeSeparation();
+    this.resize();
+  }
+
+  // Menu entries to tune the cardboard view from inside the headset.
+  viewMenuItems() {
+    if (this.mode !== 'cardboard') return [];
+    return [
+      { label: 'Beelden verder uit elkaar', action: () => { this.view.lensMM = Math.min(80, this.view.lensMM + 2); this.saveView(); this.toast(`Lensafstand ${this.view.lensMM} mm`, 2); } },
+      { label: 'Beelden dichter bij elkaar', action: () => { this.view.lensMM = Math.max(40, this.view.lensMM - 2); this.saveView(); this.toast(`Lensafstand ${this.view.lensMM} mm`, 2); } },
+      { label: '3D-diepte aan/uit', action: () => { this.view.depth = !this.view.depth; this.saveView(); this.toast(this.view.depth ? '3D-diepte aan' : '3D-diepte uit', 2); } },
+    ];
   }
 
   // ---------- internals ----------
@@ -299,8 +335,12 @@ export class Engine {
     this.reticle = { g, ring, dot, prog, ringMat };
   }
 
-  setReticle(hovering, progress) {
+  setReticle(hovering, progress, distance = 2) {
     const r = this.reticle;
+    // Put the ring at the depth of what you look at, so both eyes see one ring.
+    const d = THREE.MathUtils.clamp(distance, 0.35, 8) * 0.97;
+    r.g.position.z = -d;
+    r.g.scale.setScalar(d);
     const s = hovering ? 1.7 : 1;
     r.ring.scale.setScalar(s);
     r.ringMat.color.set(hovering ? 0xffb020 : 0xffffff);
@@ -417,8 +457,10 @@ export class Engine {
     if (this.liveView) return { live: true };
     if (this.panel) list = this.panel.pickables;
     const hits = this.raycaster.intersectObjects(list, true);
+    this.lastHitDistance = 2;
     for (const h of hits) {
       if (!isVisible(h.object)) continue;
+      this.lastHitDistance = h.distance;
       let o = h.object;
       while (o) {
         const c = o.userData.clickable;
@@ -490,7 +532,7 @@ export class Engine {
       if (dir.y < -0.85) { this.lvExit = (this.lvExit || 0) + dt; progress = Math.min(1, this.lvExit / DWELL_SECONDS); if (this.lvExit > DWELL_SECONDS) { this.lvExit = 0; this.closeLiveView(); } }
       else this.lvExit = 0;
     }
-    this.setReticle(!!target || !!(p && p.live), progress);
+    this.setReticle(!!target || !!(p && p.live), progress, p && p.live ? 1.2 : this.lastHitDistance);
     this.renderer.domElement.style.cursor = target ? 'pointer' : 'grab';
 
     // Live view render pass.
