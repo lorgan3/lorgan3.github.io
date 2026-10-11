@@ -1,0 +1,121 @@
+@font-face { font-family: Stencil; src: url(../assets/fonts/stencil.otf); }
+@font-face { font-family: Anton; src: url(../assets/fonts/anton.ttf); }
+@font-face { font-family: LCD; src: url(../assets/fonts/lcd.ttf); }
+@font-face { font-family: AlarmClock; src: url(../assets/fonts/alarmclock.ttf); }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: #eee;
+  background: #0d1418 url(../assets/img/decoder_bg.png) center top / cover fixed;
+  -webkit-tap-highlight-color: transparent;
+}
+a { color: #ffd34d; }
+button {
+  font: inherit;
+  font-weight: 700;
+  border: 0;
+  border-radius: 10px;
+  padding: 0.7em 1.1em;
+  background: #d4a017;
+  color: #111;
+  cursor: pointer;
+}
+button.secondary { background: #2c3238; color: #eee; }
+button:disabled { opacity: 0.4; cursor: default; }
+.muted { color: #9aa3a8; font-size: 0.92em; }
+h1, h2 { font-family: Stencil, Anton, sans-serif; letter-spacing: 0.04em; font-weight: normal; }
+
+/* ---------- home ---------- */
+.home { max-width: 980px; margin: 0 auto; padding: 24px 16px 60px; }
+.home header { text-align: center; padding-top: 70px; }
+.home header h1 { font-size: clamp(28px, 6vw, 52px); margin: 0; color: #ffd34d; text-shadow: 0 3px 0 #000; }
+.home header p { margin: 6px 0 0; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; margin-top: 30px; }
+.card { background: rgba(10, 14, 16, 0.86); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); }
+.card img { width: 100%; display: block; aspect-ratio: 1242 / 860; object-fit: cover; }
+.card .actions { display: grid; gap: 10px; padding: 16px; }
+.card .actions a.btn { display: block; text-align: center; text-decoration: none; padding: 0.8em; border-radius: 10px; font-weight: 700; background: #d4a017; color: #111; }
+.card .actions a.btn.secondary { background: #2c3238; color: #eee; }
+.card .links { padding: 0 16px 16px; font-size: 0.9em; }
+.howto { margin-top: 30px; background: rgba(10, 14, 16, 0.86); border-radius: 16px; padding: 6px 22px 16px; line-height: 1.5; }
+
+/* ---------- VR page ---------- */
+.vr-page { background: #000; overflow: hidden; }
+#stage { position: fixed; inset: 0; }
+#startScreen {
+  position: fixed; inset: 0; z-index: 10; overflow: auto;
+  background: rgba(0, 0, 0, 0.75) var(--bg) center / cover;
+  background-blend-mode: multiply;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+#startScreen[hidden] { display: none; }
+#startScreen .box { max-width: 520px; width: 100%; background: rgba(12, 16, 18, 0.92); border-radius: 18px; padding: 22px; text-align: center; }
+#startScreen .box img.logo { max-width: 70%; max-height: 120px; }
+#startScreen .box .modes { display: grid; gap: 10px; margin: 18px 0 10px; }
+#startScreen .box p { line-height: 1.45; }
+#vrHud { position: fixed; top: 8px; left: 50%; transform: translateX(-50%); z-index: 5; display: none; gap: 8px; }
+#vrHud button { padding: 6px 12px; font-size: 13px; opacity: 0.75; }
+body.cardboard #vrHud, body.screen #vrHud { display: flex; }
+body.cardboard::after {
+  content: ''; position: fixed; top: 0; bottom: 0; left: 50%; width: 2px; background: #333; z-index: 4; pointer-events: none;
+}
+#loading { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; font-family: Stencil, sans-serif; font-size: 28px; color: #ffd34d; z-index: 20; background: #000; }
+
+/* ---------- decoder ---------- */
+.decoder-page { min-height: 100%; }
+.decoder-page main { max-width: 760px; margin: 0 auto; padding: 12px 12px 40px; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 64px; }
+.topbar img { max-height: 64px; max-width: 45%; }
+.topbar .tools { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.topbar .tools button { padding: 0.5em 0.8em; font-size: 14px; }
+.device {
+  margin-top: 14px; background: linear-gradient(#26292b, #141617); border-radius: 22px; padding: 18px;
+  box-shadow: inset 0 2px 0 #3c4043, 0 10px 30px rgba(0, 0, 0, 0.6); border: 3px solid #b88a2c;
+}
+.device .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.display { background: #120404; border-radius: 10px; padding: 6px 18px; border: 3px solid #333; }
+#timer { font-family: AlarmClock, LCD, monospace; font-size: clamp(44px, 12vw, 76px); color: #ff2a1a; text-shadow: 0 0 14px rgba(255, 40, 20, 0.7); letter-spacing: 0.04em; }
+#timer.low { animation: blink 1s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0.45; } }
+#startBtn { width: 84px; height: 84px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ff6b4a, #b51b10); color: #fff; font-family: Stencil, sans-serif; font-size: 18px; box-shadow: 0 4px 0 #5a0d07; }
+.brand { font-family: Stencil, sans-serif; color: #ffd34d; font-size: clamp(13px, 3.6vw, 22px); line-height: 1; text-align: right; }
+.device .row { min-width: 0; }
+#startBtn { flex: none; }
+.progress { display: flex; align-items: center; gap: 8px; margin-top: 12px; }
+.progress .lamp { width: 18px; height: 18px; border-radius: 50%; background: #2a1a10; border: 2px solid #555; }
+.progress .lamp.on { background: #4be04b; box-shadow: 0 0 12px #4be04b; }
+#partLabel { font-family: Stencil, sans-serif; color: #ccc; margin-left: 6px; }
+.slots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 16px; }
+.slot {
+  aspect-ratio: 100 / 150; background: linear-gradient(#0b0c0d, #1d2022); border-radius: 12px; border: 2px solid #44494d;
+  display: flex; align-items: flex-start; justify-content: center; padding: 0; overflow: hidden; position: relative;
+}
+.slot .keyhole { width: 30%; height: 12%; background: #000; border-radius: 4px; margin-top: 18%; box-shadow: inset 0 0 6px #666; }
+.slot.filled { border-color: #b88a2c; }
+.slot .key-svg { width: 92%; margin-top: 4%; }
+.tray { margin-top: 16px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 12px; }
+#keys { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.key { background: rgba(0, 0, 0, 0.35); border: 2px solid transparent; padding: 6px; border-radius: 12px; }
+.key.selected { border-color: var(--accent, #ffd34d); background: rgba(255, 211, 77, 0.12); }
+.key .key-svg { width: 100%; height: auto; display: block; }
+#zoom { background: rgba(0, 0, 0, 0.4); border-radius: 14px; display: flex; align-items: center; justify-content: center; padding: 10px; min-height: 220px; text-align: center; }
+#zoom .key-svg { max-height: 340px; width: auto; }
+.flash { position: fixed; left: 50%; top: 40%; transform: translate(-50%, -50%) scale(0.8); font-family: Stencil, sans-serif; font-size: 44px; padding: 14px 28px; border-radius: 14px; opacity: 0; pointer-events: none; transition: all 0.2s; z-index: 30; }
+.flash.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+.flash.good { background: #1f8a2e; color: #fff; }
+.flash.bad { background: #a51d14; color: #fff; }
+.flash.info { background: #333; color: #fff; font-size: 22px; font-family: system-ui, sans-serif; }
+#pausedBanner { text-align: center; margin-top: 10px; color: #ffd34d; font-family: Stencil, sans-serif; }
+#dialog { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.75); z-index: 40; display: flex; align-items: center; justify-content: center; padding: 16px; }
+#dialog[hidden] { display: none; }
+.dialog-inner { background: #15191c; border: 2px solid #b88a2c; border-radius: 16px; padding: 20px; max-width: 560px; width: 100%; max-height: 90vh; overflow: auto; line-height: 1.45; }
+.dialog-inner h2 { color: #ffd34d; margin-top: 0; }
+.dialog-inner .big { font-family: Stencil, sans-serif; font-size: 30px; color: #4be04b; margin: 0.2em 0; }
+.hints { list-style: none; padding: 0; }
+.hints li { padding: 10px 0; border-bottom: 1px solid #2a2f33; }
+.hints li button { margin-left: 8px; padding: 0.3em 0.8em; }
+.hints li.locked { opacity: 0.5; }
+.hints li p { margin: 6px 0 0; color: #ffe8a0; }
+.backlink { position: fixed; top: 10px; left: 10px; z-index: 6; }

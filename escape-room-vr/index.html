@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d1418">
+  <title>Escape Room The Game · Virtual Reality</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="home">
+    <header>
+      <h1>ESCAPE ROOM VR</h1>
+      <p>Kies jouw mysterie</p>
+    </header>
+    <div class="cards" id="cards"></div>
+
+    <section class="howto">
+      <h2>Zo speel je</h2>
+      <ol>
+        <li>Open de <b>VR-omgeving</b> op de telefoon die in de VR-bril gaat, en de <b>Digitale Chrono Decoder</b> op een tweede telefoon of tablet.</li>
+        <li>Zet het volume van de VR-telefoon op de maximale stand en zet de telefoon op vliegtuigmodus (na het laden), zodat je niet gestoord wordt.</li>
+        <li>Let op: start de VR-omgeving en de Chrono Decoder tegelijk.</li>
+        <li>In de bril: kijk naar iets en houd je blik er even op (het rondje loopt vol), of druk op de knop van je bril. Met <b>MENU</b> in de VR-omgeving kun je de blikrichting centreren of stoppen.</li>
+      </ol>
+      <p class="muted">Werkt in Chrome (Android), Safari (iPhone) en op een Meta Quest. Zonder bril kun je de VR-omgeving ook op een scherm bekijken: sleep om rond te kijken en tik om iets te bekijken.</p>
+    </section>
+  </div>
+  <script type="module">
+    import { ADVENTURES } from './js/adventures.js';
+    const wrap = document.getElementById('cards');
+    for (const a of Object.values(ADVENTURES)) {
+      const el = document.createElement('article');
+      el.className = 'card';
+      el.innerHTML = `
+        <img src="${a.card}" alt="${a.title}">
+        <div class="actions">
+          <a class="btn" href="vr.html?a=${a.id}">VR-OMGEVING</a>
+          <a class="btn secondary" href="decoder.html?a=${a.id}">DIGITALE CHRONO DECODER</a>
+        </div>
+        <div class="links">${a.print.map((p) => `<a href="${p.href}" target="_blank" rel="noopener">${p.label}</a>`).join(' · ')}</div>`;
+      wrap.appendChild(el);
+    }
+  </script>
+</body>
+</html>

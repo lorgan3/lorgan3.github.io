@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>VR-omgeving</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="vr-page">
+  <div id="loading">LADEN</div>
+  <div id="stage"></div>
+  <div id="vrHud">
+    <button id="hudRecenter" class="secondary">Centreer</button>
+    <button id="hudExit" class="secondary">Stop</button>
+  </div>
+  <div id="startScreen" hidden>
+    <div class="box">
+      <img class="logo" id="advLogo" alt="">
+      <p>Zet het volume van de telefoon op de maximale stand!<br>Sluit de applicatie niet gedurende het spel.</p>
+      <p class="muted">Let op: start de VR-omgeving en de Chrono Decoder tegelijk.</p>
+      <div class="modes">
+        <button id="modeXR" hidden>START VR (WebXR-bril)</button>
+        <button id="modeCardboard">START VR-OMGEVING (telefoon in de bril)</button>
+        <button id="modeScreen" class="secondary">Zonder bril (op het scherm)</button>
+      </div>
+      <p class="muted" id="resumeNote" hidden>Jullie voortgang is bewaard. <a href="#" id="resetLink">Opnieuw beginnen</a></p>
+      <p><a href="index.html">← Terug naar het menu</a></p>
+    </div>
+  </div>
+  <script type="module" src="js/vr.js"></script>
+</body>
+</html>
