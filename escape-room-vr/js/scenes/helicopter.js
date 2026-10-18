@@ -12,10 +12,13 @@ const MORSE_FREQ = '328500';
 const MORSE_CODE = '..-. -.. .- -...';
 const VOICE_FREQ = '120800';
 
-// Beacon light patterns (morse, one character each).
+// Beacon light patterns (morse, one character each). Bearings and relative distances
+// follow the printed map; HEADING is the nose direction (map north up). Both spots
+// were checked for line of sight from the eye point.
+const HEADING = 305;
 const BEACONS = [
-  { code: '.-..', pos: [-14, -36], height: 16 },
-  { code: '-..-', pos: [70, 22], height: 18 },
+  { code: '.-..', pos: [23, -87], height: 16 },
+  { code: '-..-', pos: [-193, -230], height: 18 },
 ];
 
 export function buildHelicopter(engine, ui) {
@@ -146,11 +149,13 @@ export function buildHelicopter(engine, ui) {
   cyl(0.25, 0.25, 0.15, darkMat, [0, 0, 0], rotor, 16);
   const bladeMat = mat(0x262a22, { roughness: 0.6 });
   const tipMat = mat(0xe0b020, { roughness: 0.6 });
+  // Angles chosen by raycasting from the eye so every blade can be seen through the
+  // skylight or a window (the rear-left one through the open door).
   const blades = [
-    { yaw: THREE.MathUtils.degToRad(-35), len: 6.5, droop: 0.12 },
-    { yaw: THREE.MathUtils.degToRad(60), len: 6.5, droop: 0.22 },
-    { yaw: THREE.MathUtils.degToRad(150), len: 6.5, droop: 0.1 },
-    { yaw: THREE.MathUtils.degToRad(235), len: 1.6, droop: 0.05, broken: true },
+    { yaw: THREE.MathUtils.degToRad(220), len: 6.5, droop: 0.12 },
+    { yaw: THREE.MathUtils.degToRad(310), len: 6.5, droop: 0.22 },
+    { yaw: THREE.MathUtils.degToRad(40), len: 6.5, droop: 0.1 },
+    { yaw: THREE.MathUtils.degToRad(120), len: 2.0, droop: 0.05, broken: true },
   ];
   for (const b of blades) {
     const arm = new THREE.Group();
@@ -164,8 +169,9 @@ export function buildHelicopter(engine, ui) {
       box(0.3, 0.055, 0.37, tipMat, [b.len - 0.2, 0, 0], tilt);
       box(0.15, 0.055, 0.37, tipMat, [b.len - 0.65, 0, 0], tilt);
     } else {
-      // Jagged end.
-      for (let i = 0; i < 4; i++) box(0.12 + Math.random() * 0.15, 0.05, 0.08, bladeMat, [b.len + 0.25, 0, -0.14 + i * 0.09], tilt);
+      // Jagged end, in a lighter colour so the break reads against the sky.
+      const splinter = mat(0x9a9480, { roughness: 0.9 });
+      for (let i = 0; i < 4; i++) box(0.12 + Math.random() * 0.15, 0.05, 0.08, splinter, [b.len + 0.25, 0, -0.14 + i * 0.09], tilt);
     }
   }
 
@@ -291,7 +297,8 @@ export function buildHelicopter(engine, ui) {
 
   function radioRegion(uv) {
     const x = uv.x * RADIO_W; const y = (1 - uv.y) * RADIO_H;
-    for (let i = 0; i < 6; i++) {
+    // Only the four settable digits: the fixed ones' down-arrow zones overlap the knob.
+    for (let i = 0; i < 4; i++) {
       const d = radioLayout.digit(i);
       if (x >= d.x - 4 && x <= d.x + d.w + 4) {
         if (y >= 110 && y < 225) return { kind: 'up', i };
@@ -305,13 +312,13 @@ export function buildHelicopter(engine, ui) {
 
   function radioRegionId(uv, inZoom) {
     const r = radioRegion(uv);
-    if (r && (r.kind === 'send' || r.i < 4)) return r.kind + (r.i ?? '');
+    if (r) return r.kind + (r.i ?? '');
     return inZoom ? null : 'zoom';
   }
 
   function radioPress(uv, inZoom) {
     const r = radioRegion(uv);
-    if (!r || ((r.kind === 'up' || r.kind === 'down') && r.i >= 4)) {
+    if (!r) {
       if (!inZoom) openRadioZoom();
       return;
     }
@@ -439,9 +446,12 @@ export function buildHelicopter(engine, ui) {
       ctx.shadowColor = '#ff9a00'; ctx.shadowBlur = 12;
       ctx.fillText(f[i], d.x + d.w / 2, d.y + d.h / 2 + 6);
       ctx.shadowBlur = 0;
-      ctx.fillStyle = active ? '#e8a21c' : '#77735e';
-      tri(ctx, d.x + d.w / 2, 168, 46, true);
-      tri(ctx, d.x + d.w / 2, 418, 46, false);
+      // The last two digits are fixed, so they get no arrows (their lower one sat behind the knob).
+      if (active) {
+        ctx.fillStyle = '#e8a21c';
+        tri(ctx, d.x + d.w / 2, 168, 46, true);
+        tri(ctx, d.x + d.w / 2, 418, 46, false);
+      }
     }
     // Signal bar.
     ctx.fillStyle = '#5a5640'; ctx.fillRect(330, 448, 400, 46);
@@ -474,7 +484,12 @@ export function buildHelicopter(engine, ui) {
       for (let i = 0; i <= n; i++) {
         const a = a0 + (a1 - a0) * i / n;
         ctx.beginPath(); ctx.moveTo(x + Math.cos(a) * r * 0.85, y + Math.sin(a) * r * 0.85); ctx.lineTo(x + Math.cos(a) * r * 0.97, y + Math.sin(a) * r * 0.97); ctx.stroke();
-        if (labels && labels[i] !== undefined && labels[i] !== '') ctx.fillText(labels[i], x + Math.cos(a) * r * 0.68, y + Math.sin(a) * r * 0.68);
+        if (labels && labels[i] !== undefined && labels[i] !== '') {
+          // Dark outline keeps the number readable where a needle crosses it.
+          const lx = x + Math.cos(a) * r * 0.68; const ly = y + Math.sin(a) * r * 0.68;
+          ctx.save(); ctx.strokeStyle = '#0c0d0c'; ctx.lineWidth = 7; ctx.lineJoin = 'round'; ctx.strokeText(labels[i], lx, ly); ctx.restore();
+          ctx.fillText(labels[i], lx, ly);
+        }
       }
     };
     const needle = (x, y, r, a, color = '#fff') => {
@@ -493,7 +508,8 @@ export function buildHelicopter(engine, ui) {
     }, 'KLOK');
     // Compass.
     gauge(490, cy, 120, (x, y, r) => {
-      const hd = -0.4;
+      // Card turns so the fixed pointer (the nose) reads HEADING.
+      const hd = THREE.MathUtils.degToRad(360 - HEADING);
       ctx.translate(x, y); ctx.rotate(hd);
       ctx.fillStyle = '#eee'; ctx.font = 'bold 30px sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
       [['N', 0], ['O', Math.PI / 2], ['Z', Math.PI], ['W', -Math.PI / 2]].forEach(([l, a]) => ctx.fillText(l, Math.sin(a) * r * 0.72, -Math.cos(a) * r * 0.72));
@@ -503,28 +519,30 @@ export function buildHelicopter(engine, ui) {
     // Fuel.
     gauge(790, cy, 120, (x, y, r) => {
       const a0 = Math.PI * 0.8; const a1 = Math.PI * 2.2;
-      ticks(x, y, r, 10, a0, a1, ['0', '', '4', '', '8', '', '12', '', '16', '', '20']);
       needle(x, y, r, a0 + (a1 - a0) * (1210 / 2000));
-      ctx.fillStyle = '#111'; roundRect(ctx, x - 70, y + 34, 140, 48, 6); ctx.fill();
-      ctx.fillStyle = '#7dff7a'; ctx.font = '36px LCD, monospace'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-      ctx.fillText('1210 kg', x, y + 60);
-      ctx.fillStyle = '#aaa'; ctx.font = '18px sans-serif'; ctx.fillText('x100 kg', x, y - 34);
+      ticks(x, y, r, 10, a0, a1, ['0', '', '4', '', '8', '', '12', '', '16', '', '20']);
+      // Readout sits between the 0 and 20 labels instead of on top of them.
+      ctx.fillStyle = '#111'; roundRect(ctx, x - 56, y + 60, 112, 38, 6); ctx.fill();
+      ctx.fillStyle = '#7dff7a'; ctx.font = '30px LCD, monospace'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText('1210 kg', x, y + 80);
+      ctx.fillStyle = '#aaa'; ctx.font = '18px sans-serif'; ctx.fillText('x100 kg', x, y + 40);
     }, 'BRANDSTOF');
     // Wind meter: Beaufort scale plus a direction indicator relative to the helicopter.
     gauge(1100, cy, 120, (x, y, r) => {
       const a0 = Math.PI * 0.75; const a1 = Math.PI * 2.25;
-      ticks(x, y, r, 12, a0, a1, ['0', '', '2', '', '4', '', '6', '', '8', '', '10', '', '12']);
       needle(x, y, r, a0 + (a1 - a0) * (6 / 12), '#ffcc33');
-      // Helicopter silhouette (top view, nose up) with wind arrow coming from the tail.
+      ticks(x, y, r, 12, a0, a1, ['0', '', '2', '', '4', '', '6', '', '8', '', '10', '', '12']);
+      // Helicopter silhouette (top view, nose up) with wind arrow coming from the tail,
+      // kept below the needle hub.
       ctx.fillStyle = '#9fa58a';
-      ctx.beginPath(); ctx.ellipse(x, y + 22, 12, 22, 0, 0, 7); ctx.fill();
-      ctx.fillRect(x - 3, y + 40, 6, 30);
+      ctx.beginPath(); ctx.ellipse(x, y + 42, 11, 20, 0, 0, 7); ctx.fill();
+      ctx.fillRect(x - 3, y + 58, 6, 30);
       ctx.strokeStyle = '#4fc3ff'; ctx.fillStyle = '#4fc3ff'; ctx.lineWidth = 5;
-      ctx.beginPath(); ctx.moveTo(x + 34, y + 80); ctx.lineTo(x + 34, y - 10); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(x + 34, y - 22); ctx.lineTo(x + 24, y - 4); ctx.lineTo(x + 44, y - 4); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(x + 34, y + 95); ctx.lineTo(x + 34, y + 12); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(x + 34, y); ctx.lineTo(x + 24, y + 18); ctx.lineTo(x + 44, y + 18); ctx.fill();
     }, 'WIND');
     // Decorative instruments.
-    gauge(1400, cy, 110, (x, y, r) => { ticks(x, y, r, 10, Math.PI * 0.75, Math.PI * 2.25, ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '']); needle(x, y, r, Math.PI * 0.75 + 0.1); }, 'HOOGTE');
+    gauge(1400, cy, 110, (x, y, r) => { needle(x, y, r, Math.PI * 0.75 + 0.1); ticks(x, y, r, 10, Math.PI * 0.75, Math.PI * 2.25, ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '']); }, 'HOOGTE');
     gauge(1680, cy, 110, (x, y, r) => { ticks(x, y, r, 8, Math.PI * 0.75, Math.PI * 2.25); needle(x, y, r, Math.PI * 0.75); }, 'ROTOR RPM');
     // Warning lamps.
     const blink = Math.sin(engine.time * 5) > 0;

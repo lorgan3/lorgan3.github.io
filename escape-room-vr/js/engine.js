@@ -105,7 +105,10 @@ export class Engine {
     const back = new THREE.Mesh(new THREE.SphereGeometry(2.5, 24, 16), new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.55, side: THREE.BackSide, depthWrite: false }));
     back.renderOrder = 900;
     group.renderOrder = 1000;
-    [mesh, close].forEach((m) => { m.renderOrder = 1001; m.material.depthTest = false; });
+    // Transparent so the panel joins the backdrop's render pass and is drawn after it:
+    // with depthTest off it writes no depth, so an opaque panel got darkened by the
+    // backdrop wherever the room behind it was further away than the sphere.
+    [mesh, close].forEach((m) => { m.renderOrder = 1001; m.material.depthTest = false; m.material.transparent = true; });
 
     const camPos = new THREE.Vector3();
     const camDir = new THREE.Vector3();
@@ -159,7 +162,8 @@ export class Engine {
     plane.position.z = -dist;
     plane.renderOrder = 1100;
     // Black surround so the room is hidden while looking through.
-    const surround = new THREE.Mesh(new THREE.SphereGeometry(2, 24, 16), new THREE.MeshBasicMaterial({ color: 0x000000, side: THREE.BackSide, depthTest: false }));
+    // Transparent (but fully opaque) so it sorts after see-through scene objects such as glass.
+    const surround = new THREE.Mesh(new THREE.SphereGeometry(2, 24, 16), new THREE.MeshBasicMaterial({ color: 0x000000, side: THREE.BackSide, depthTest: false, transparent: true }));
     surround.renderOrder = 1050;
     this.camera.add(plane, surround);
     let hud = null;

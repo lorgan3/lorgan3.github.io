@@ -600,7 +600,8 @@ export function buildSubmarine(engine, ui) {
     if (S.restarted) {
       ctx.fillStyle = '#fff';
       ctx.shadowColor = '#fff'; ctx.shadowBlur = 12;
-      roundedPoly(ctx, [[w * 0.18, h * 0.28], [w * 0.68, h * 0.28], [w * 0.82, h * 0.72], [w * 0.32, h * 0.72]], 14);
+      // Same lean as key II's hole (paraR): top edge shifted right.
+      roundedPoly(ctx, [[w * 0.32, h * 0.28], [w * 0.82, h * 0.28], [w * 0.68, h * 0.72], [w * 0.18, h * 0.72]], 14);
       ctx.fill();
       ctx.shadowBlur = 0;
     }
@@ -979,7 +980,9 @@ function buildPeriscopeScene() {
     const b = THREE.MathUtils.degToRad(s.bearing);
     const d = 24;
     g.position.set(Math.sin(b) * d, 0, -Math.cos(b) * d);
-    g.lookAt(0, 0, 0);
+    // Face the periscope with a plain yaw. lookAt() stores the 180° case as x=π, z=π,
+    // and the per-frame roll in update() overwrites z, flipping that boat upside down.
+    g.rotation.y = -b;
     scene.add(g);
     // Lifeboat.
     const hullM = new THREE.MeshStandardMaterial({ color: 0xff6a1a, roughness: 0.6 });
